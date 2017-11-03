@@ -12,8 +12,8 @@ services:
         environment:
             - "EXTERNALADDRESS=https://compute-test.c3s-magic.eu:7777"
             #  New application can be created at https://console.developers.google.com/apis/credentials 
-            - "OAUTHCLIENTSECRET=***"
-            - "OAUTHCLIENTID=***"
+            - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
+            - "OAUTHCLIENTID=${OAUTHCLIENTID}"
         links:
             - compute.c3s-magic.eu
     compute.c3s-magic.eu:
@@ -24,13 +24,15 @@ services:
             - ./adaguc-services-compute/adaguc-services-compute-home/:/data/adaguc-services-home/
         environment:
             - "EXTERNALADDRESS=https://compute.c3s-magic.eu:9000"
-    
-# Do docker-compose up in working directory
-# Directories $HOME/data/adaguc-datasets and $HOME/data/adaguc-autowms will be created if they do not exist.
-# Copy your NetCDF/GeoJSON/HDF5 to $HOME/data/adaguc-autowms
-# Files are are accessible via http://localhost:8080/adaguc-services/wms.cgi?source=testdata.nc&&service=WMS&request=GetCapabilities
-# They can be visited in the adaguc-viewer via: 
-# http://localhost:8081/adaguc-viewer/ by adding service http://localhost:8080/adaguc-services/wms.cgi?source=testdata.nc via Add data.
-#Direct link is:
-# http://localhost:8081/adaguc-viewer/?service=http%3A%2F%2Flocalhost%3A8080%2Fadaguc-services%2Fwms.cgi%3Fsource%3Dtestdata.nc
-# Testdata can be found here: http://opendap.knmi.nl/knmi/thredds/catalog/ADAGUC/catalog.html
+    c3s-magic-frontend:
+        image: c3s-magic/c3s-magic-frontend
+        container_name: frontend.c3s-magic.eu
+        environment: 
+          - "CONTROLLER=https://compute-test.c3s-magic.eu:7777"
+          - "COMPUTE=https://compute.c3s-magic.eu:9000"
+        ports:
+          - "8080:5000"
+
+# Add 127.0.1.1       compute-test.c3s-magic.eu to /etc/hosts    (compute-test.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
+# Do docker-compose up in working directory and go to localhost:8080
+# Do docker-compose down to stop all
