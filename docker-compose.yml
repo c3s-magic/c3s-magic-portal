@@ -1,0 +1,36 @@
+version: '2'
+
+services:
+    adaguc-services-controller:
+        build: adaguc-services-controller
+        container_name: controller.c3s-magic.eu
+        ports: 
+            - "7777:9000"
+        volumes:
+            - ./adaguc-services-controller/config:/config
+            - ./adaguc-services-controller/adaguc-services-controller-home/:/data/adaguc-services-home/
+        environment:
+            - "EXTERNALADDRESS=https://compute-test.c3s-magic.eu:7777"
+            #  New application can be created at https://console.developers.google.com/apis/credentials 
+            - "OAUTHCLIENTSECRET=***"
+            - "OAUTHCLIENTID=***"
+        links:
+            - compute.c3s-magic.eu
+    compute.c3s-magic.eu:
+        build: adaguc-services-compute
+        container_name: compute.c3s-magic.eu
+        volumes:
+            - ./adaguc-services-compute/config:/config
+            - ./adaguc-services-compute/adaguc-services-compute-home/:/data/adaguc-services-home/
+        environment:
+            - "EXTERNALADDRESS=https://compute.c3s-magic.eu:9000"
+    
+# Do docker-compose up in working directory
+# Directories $HOME/data/adaguc-datasets and $HOME/data/adaguc-autowms will be created if they do not exist.
+# Copy your NetCDF/GeoJSON/HDF5 to $HOME/data/adaguc-autowms
+# Files are are accessible via http://localhost:8080/adaguc-services/wms.cgi?source=testdata.nc&&service=WMS&request=GetCapabilities
+# They can be visited in the adaguc-viewer via: 
+# http://localhost:8081/adaguc-viewer/ by adding service http://localhost:8080/adaguc-services/wms.cgi?source=testdata.nc via Add data.
+#Direct link is:
+# http://localhost:8081/adaguc-viewer/?service=http%3A%2F%2Flocalhost%3A8080%2Fadaguc-services%2Fwms.cgi%3Fsource%3Dtestdata.nc
+# Testdata can be found here: http://opendap.knmi.nl/knmi/thredds/catalog/ADAGUC/catalog.html

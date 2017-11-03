@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adaguc-services>
+  <!--
+   
+  
+    ### Make sure that this services trusts the controller(s) as well ###
+    
+    # keytool -import -v -trustcacerts -alias controller-instance-001 -file ~/adaguc-services-controller-ws/security/adaguc-services-ca.pem -keystore ~/adaguc-services-compute-ws/security/truststore.ts -storepass changeit -noprompt
+   
+    
+    
+  -->
+  <userworkspace>{ENV.ADAGUC_SERVICES_HOME}/data/adaguc-services-space</userworkspace>
+
+  <external-home-url>{ENV.EXTERNALADDRESS}</external-home-url>
+
+  <basedir>{ENV.ADAGUC_SERVICES_HOME}/data/adaguc-services-base</basedir>
+
+  <server>
+    <port>9000</port>
+  </server>
+
+  
+  <security>
+    <truststorepassword>changeit</truststorepassword>
+    <truststore>{ENV.ADAGUC_SERVICES_HOME}/security/truststore.ts</truststore>
+    <!--<trustrootscadirectory>{ENV.ADAGUC_SERVICES_HOME}/src/.globus/certificates/</trustrootscadirectory>-->
+    <keystore>{ENV.ADAGUC_SERVICES_HOME}/security/keystore.jks</keystore>
+    <keystorepassword>password</keystorepassword>
+    <keystoretype>JKS</keystoretype>
+    <keyalias>tomcat</keyalias>  
+  </security>
+
+  <adaguc-server>
+    <adagucexecutable>/src/adaguc-server/bin/adagucserver</adagucexecutable>
+    <export>ADAGUC_PATH=/src/adaguc-server/</export>
+    <export>ADAGUC_CONFIG=/config/adaguc-server-config.xml</export>
+    <export>ADAGUC_DATARESTRICTION=FALSE</export>
+    <export>ADAGUC_LOGFILE={ENV.ADAGUC_SERVICES_HOME}/adaguc-services-tmp/adaguc.autoresource.log</export>
+    <export>ADAGUC_FONT=/src/adaguc-server/data/fonts/FreeSans.ttf</export>
+  </adaguc-server>
+  
+  <pywps-server>
+    <pywpsexecutable>/src/pywps/wps.py</pywpsexecutable>
+    <pywpsconfigtemplate>/src/pywps/pywps/default.cfg</pywpsconfigtemplate>
+    <pywpsoutputdir>{ENV.ADAGUC_SERVICES_HOME}/wpsoutputs</pywpsoutputdir>
+    <pywpsprocessesdir>/src/pywps/pywps/processes/</pywpsprocessesdir>
+    <tmp>{ENV.ADAGUC_SERVICES_HOME}/adaguc-services-tmp</tmp>
+    <export>ADAGUC_PATH=/src/adaguc-server/</export>
+    <export>ADAGUC_CONFIG=/config/adaguc-server-config.xml</export>
+    <export>ADAGUC_DATARESTRICTION=FALSE</export>
+    <export>ADAGUC_LOGFILE={ENV.ADAGUC_SERVICES_HOME}/adaguc-services-tmp/adaguc.autoresource.log</export>
+    <export>ADAGUC_FONT=/src/adaguc-server/data/fonts/FreeSans.ttf</export>
+    <export>PATH=/src/adaguc-server/bin/:{ENV.PATH}</export>
+    <export>PYWPS_TEMPLATES=/src/pywps/pywps/Templates</export>
+    <export>PORTAL_OUTPUT_PATH={ENV.ADAGUC_SERVICES_HOME}/wpsoutputs</export>
+    <export>USE_FONTCONFIG=False</export>
+  </pywps-server>
+</adaguc-services>

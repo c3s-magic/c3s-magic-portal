@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adaguc-services>
+  <!--
+   
+  
+    ### Make sure that this services trusts the controller(s) as well ###
+    
+    # keytool -import -v -trustcacerts -alias controller-instance-001 -file ~/adaguc-services-controller-ws/security/adaguc-services-ca.pem -keystore ~/adaguc-services-compute-ws/security/truststore.ts -storepass changeit -noprompt
+   
+    
+    
+  -->
+  <userworkspace>{ENV.ADAGUC_SERVICES_HOME}/data/adaguc-services-space</userworkspace>
+
+  <external-home-url>{ENV.EXTERNALADDRESS}</external-home-url>
+
+  <basedir>{ENV.ADAGUC_SERVICES_HOME}/data/adaguc-services-base</basedir>
+
+  <server>
+    <port>9000</port>
+  </server>
+
+  
+  <security>
+    <truststorepassword>changeit</truststorepassword>
+    <truststore>{ENV.ADAGUC_SERVICES_HOME}/security/truststore.ts</truststore>
+    <!--<trustrootscadirectory>{ENV.ADAGUC_SERVICES_HOME}/src/.globus/certificates/</trustrootscadirectory>-->
+    <keystore>{ENV.ADAGUC_SERVICES_HOME}/security/keystore.jks</keystore>
+    <keystorepassword>password</keystorepassword>
+    <keystoretype>JKS</keystoretype>
+    <keyalias>tomcat</keyalias>  
+    <tokenapi>
+      <cacertificate>{ENV.ADAGUC_SERVICES_HOME}/security/adaguc-services-ca.cert</cacertificate>
+      <caprivatekey>{ENV.ADAGUC_SERVICES_HOME}/security/adaguc-services-ca.key</caprivatekey>
+      <remote-instances>
+        <adaguc-service>https://compute.c3s-magic.eu:9000</adaguc-service>
+  
+        <!--
+          ### Make sure that the remote instance (adaguc-service-compute) is trusted by adding its certificate to the controllers trust store ###
+          
+          # 1) Export certificate from remote keystore to a file called adaguc-compute-001.pem:
+          cd magic-docker
+          keytool -export -alias tomcat -rfc -file adaguc-compute-001.pem -keystore ./adaguc-services-compute/adaguc-services-home/security/keystore.jks -storepass password
+
+          # 2) Put this certificate from adaguc-compute-001.pem into controllers truststore
+          cd magic-docker
+          sudo keytool -import -v -trustcacerts -alias adaguc-compute-001 -file adaguc-compute-001.pem -keystore ./adaguc-services-controller/adaguc-services-home/security/truststore.ts -storepass changeit -noprompt
+          
+          # 3) Export CA of this instance into truststore of remote instance
+          cd magic-docker
+          keytool -import -v -trustcacerts -alias controller-instance-001 -file ./adaguc-services-controller/adaguc-services-home/security/adaguc-services-ca.cert -keystore ./adaguc-services-compute/adaguc-services-home/security/truststore.ts -storepass changeit -noprompt
+        -->
+
+      </remote-instances>
+    </tokenapi>
+  </security>
+
+  <adaguc-server>
+    <adagucexecutable>/src/adaguc-server/bin/adagucserver</adagucexecutable>
+    <export>ADAGUC_PATH=/src/adaguc-server/</export>
+    <export>ADAGUC_CONFIG=/config/adaguc-server-config.xml</export>
+    <export>ADAGUC_DATARESTRICTION=FALSE</export>
+    <export>ADAGUC_LOGFILE={ENV.ADAGUC_SERVICES_HOME}/adaguc-services-tmp/adaguc.autoresource.log</export>
+    <export>ADAGUC_FONT=/src/adaguc-server/data/fonts/FreeSans.ttf</export>
+  </adaguc-server>
+  
+  
+  <oauth2>
+    <provider name="google">    
+      <!-- 
+      New application can be created at https://console.developers.google.com/apis/credentials -->
+      <authloc>https://accounts.google.com/o/oauth2/auth</authloc>                                                                                                                                                                                         
+      <tokenloc>https://accounts.google.com/o/oauth2/token</tokenloc>                                                                                                                                                                                      
+      <clientid>{ENV.OAUTHCLIENTID}</clientid>                                                                                                                                                        
+      <clientsecret>{ENV.OAUTHCLIENTSECRET}</clientsecret>                                                                                                                                                                                                
+      <scope>email</scope>                                                                                                                                                                                                                                 
+      <logo>images/google.png</logo>                                                                                                                                                                                                         
+      <description>Sign in with Google</description>                                                                                                                                                                               
+    </provider>                                                                                                                                                                                                                                            
+  </oauth2> 
+</adaguc-services>
