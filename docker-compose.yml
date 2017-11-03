@@ -25,7 +25,7 @@ services:
         environment:
             - "EXTERNALADDRESS=https://compute.c3s-magic.eu:9000"
     c3s-magic-frontend:
-        image: c3s-magic/c3s-magic-frontend
+        image: c3smagic/c3s-magic-frontend
         container_name: frontend.c3s-magic.eu
         environment: 
           - "CONTROLLER=https://compute-test.c3s-magic.eu:7777"
@@ -34,5 +34,6 @@ services:
           - "8080:5000"
 
 # Add 127.0.1.1       compute-test.c3s-magic.eu to /etc/hosts    (compute-test.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
+# Do docker-compose build --pull
 # Do docker-compose up in working directory and go to localhost:8080
 # Do docker-compose down to stop all
