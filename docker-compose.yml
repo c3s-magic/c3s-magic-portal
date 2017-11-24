@@ -16,12 +16,12 @@ services:
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"
         links:
-            - compute.c3s-magic.eu
-    compute.c3s-magic.eu:
+            - portal.c3s-magic.eu
+    portal.c3s-magic.eu:
         build: adaguc-services-compute
         ports: 
             - "9000:9000"
-        container_name: compute.c3s-magic.eu
+        container_name: portal.c3s-magic.eu
         volumes:
             - ./adaguc-services-compute/config:/config
             - ./adaguc-services-compute/adaguc-services-compute-home/:/data/adaguc-services-home/

@@ -22,7 +22,7 @@ RUN cd nrf && tar -xf nrf.tar && make -f nrf.mk && cd ..
 RUN cp ./nrf/libnr.a ClimExp-fortran/build
 COPY Makefile.docker ClimExp-fortran/build/Makefile
 RUN cd ClimExp-fortran/build && make
-ENV CLIMEXPFORTRAN=/src/ClimExp-fortran/build
+ENV CLIMEXPFORTRAN=/src/ClimExp-fortran/build/
 
 # Install wps_prov
 WORKDIR /src
