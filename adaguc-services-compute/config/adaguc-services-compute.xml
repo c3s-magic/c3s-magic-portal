@@ -55,5 +55,7 @@
     <export>PYWPS_TEMPLATES=/src/pywps/pywps/Templates</export>
     <export>PORTAL_OUTPUT_PATH={ENV.ADAGUC_SERVICES_HOME}/wpsoutputs</export>
     <export>USE_FONTCONFIG=False</export>
+    <!--<export>CLIMEXPFORTRAN=/src/ClimExp-fortran/build</export>
+    <export>PYTHONPATH=/src/ClimExp-pyapi/wpsproc/prov:/src/wps_prov</export>-->
   </pywps-server>
 </adaguc-services>

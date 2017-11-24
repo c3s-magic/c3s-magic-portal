@@ -1,4 +1,4 @@
-__all__ = ["binaryoperatorfornumbers_10sec"]
+__all__ = ["binaryoperatorfornumbers_10sec", "pywps_climexp"]
 
 
 

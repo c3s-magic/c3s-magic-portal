@@ -1,7 +1,7 @@
 #/bin/bash
 
-COMPUTEHOME=adaguc-services-compute-home
-CONTROLLERHOME=adaguc-services-controller-home
+COMPUTEHOME=adaguc-services-compute/adaguc-services-compute-home
+CONTROLLERHOME=adaguc-services-controller/adaguc-services-controller-home
 
 # 1) Export certificate from remote keystore to a file called adaguc-compute-001.pem:
 keytool -export -alias tomcat -rfc -file adaguc-compute-001.pem -keystore ${COMPUTEHOME}/security/keystore.jks -storepass password

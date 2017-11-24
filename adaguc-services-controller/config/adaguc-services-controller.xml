@@ -33,7 +33,7 @@
       <cacertificate>{ENV.ADAGUC_SERVICES_HOME}/security/adaguc-services-ca.cert</cacertificate>
       <caprivatekey>{ENV.ADAGUC_SERVICES_HOME}/security/adaguc-services-ca.key</caprivatekey>
       <remote-instances>
-        <adaguc-service>https://compute.c3s-magic.eu:9000</adaguc-service>
+        <adaguc-service>https://portal.c3s-magic.eu:9000</adaguc-service>
   
         <!--
           ### Make sure that the remote instance (adaguc-service-compute) is trusted by adding its certificate to the controllers trust store ###
