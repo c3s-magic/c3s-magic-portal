@@ -29,11 +29,11 @@ WORKDIR /src
 RUN git clone https://github.com/KNMI/wps_prov
 RUN cd wps_prov && python setup.py install
 
+VOLUME /src/pywps/pywps/processes/
 #  Install climexp WPS
 WORKDIR /src
 RUN git clone https://github.com/maartenplieger/ClimExp-pyapi
-RUN cp ClimExp-pyapi/wpsproc/pywps_climexp.py  /src/pywps/pywps/processes/
-RUN cp -r ClimExp-pyapi/wpsproc/prov  /src/pywps/pywps/processes/
+
 RUN cd ClimExp-pyapi && python setup.py install
 ENV PYTHONPATH="/src/ClimExp-pyapi/wpsproc/prov:/src/wps_prov"
 
@@ -41,9 +41,6 @@ ENV ADAGUC_SERVICES_HOME=/data/adaguc-services-home/
 
 # Configure adaguc-services
 ENV ADAGUC_SERVICES_CONFIG=/config/adaguc-services-compute.xml
-
-# Copy processes
-COPY ./processes/* /src/pywps/pywps/processes/
 
 COPY ./start.sh /src/
 

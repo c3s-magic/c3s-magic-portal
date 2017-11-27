@@ -23,8 +23,10 @@ services:
             - "9000:9000"
         container_name: portal.c3s-magic.eu
         volumes:
+            - ./adaguc-services-compute/processes:/src/pywps/pywps/processes/
             - ./adaguc-services-compute/config:/config
             - ./adaguc-services-compute/adaguc-services-compute-home/:/data/adaguc-services-home/
+            - /data/climexp:/data/climexp
         environment:
             - "EXTERNALADDRESS=https://portal.c3s-magic.eu:9000"
     c3s-magic-frontend:
