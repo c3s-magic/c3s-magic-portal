@@ -5,12 +5,12 @@ services:
         build: adaguc-services-controller
         container_name: controller.c3s-magic.eu
         ports: 
-            - "7777:9000"
+            - "443:9000"
         volumes:
             - ./adaguc-services-controller/config:/config
             - ./adaguc-services-controller/adaguc-services-controller-home/:/data/adaguc-services-home/
         environment:
-            - "EXTERNALADDRESS=https://portal.c3s-magic.eu:7777"
+            - "EXTERNALADDRESS=https://portal.c3s-magic.eu:443"
             - "COMPUTE_NODE_1_URL=https://portal.c3s-magic.eu:9000"
             #  New application can be created at https://console.developers.google.com/apis/credentials 
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
@@ -33,12 +33,12 @@ services:
         image: c3smagic/c3s-magic-frontend
         container_name: frontend.c3s-magic.eu
         environment: 
-          - "CONTROLLER=https://portal.c3s-magic.eu:7777"
+          - "CONTROLLER=https://portal.c3s-magic.eu:443"
           - "COMPUTE=https://portal.c3s-magic.eu:9000"
         ports:
-          - "8080:5000"
+          - "80:5000"
 
 # Add 127.0.1.1       portal.c3s-magic.eu to /etc/hosts    (portal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
 # Do docker-compose build --pull
-# Do docker-compose up in working directory and go to localhost:8080
+# Do docker-compose up in working directory and go to localhost:80
 # Do docker-compose down to stop all
