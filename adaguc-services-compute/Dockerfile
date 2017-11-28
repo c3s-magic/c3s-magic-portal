@@ -11,8 +11,34 @@ RUN yum update -y && yum install -y \
   scipy\
   numpy\
   python-pandas\
-  netcdf4-python 
-  
+  netcdf4-python\
+  ImageMagick\
+  && yum groupinstall -y "Development tools"
+
+# install conda
+WORKDIR /src
+RUN curl -L -O https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
+RUN bash ./Miniconda2-latest-Linux-x86_64.sh -p /miniconda -b
+ENV PATH=/miniconda/bin:${PATH}
+RUN conda update -y conda
+RUN conda update -y pip
+
+# ESMVALTOOL section
+
+# get esmvaltool
+WORKDIR /src
+RUN git clone https://github.com/c3s-magic/ESMValTool
+WORKDIR /src/ESMValTool
+RUN git checkout REFACTORING_backend_perfmetrics_demo
+
+# install esmvaltool
+RUN conda env update --name root
+# workaround: ncl install from conda is broken, see https://github.com/conda-forge/ncl-feedstock/issues/25
+RUN conda install -y -c conda-forge poppler=0.52.0 xerces-c=3.1.4
+RUN python setup.py install
+
+# CLIMATE EXPLORER section
+
 WORKDIR /src
 RUN git clone https://github.com/andrejsim/ClimExp-fortran.git 
 RUN mkdir -p ClimExp-fortran/build
@@ -48,7 +74,8 @@ RUN chmod +x /src/start.sh
 ENTRYPOINT /src/start.sh
 
 #docker build -t adaguc-services-compute .
-#docker run -e EXTERNALADDRESS="http://127.0.0.1:8888/" -p 8888:9000 -v $PWD/config:/config -v $PWD/adaguc-services-home/:/data/adaguc-services-home/ -it adaguc-services-compute
+#docker run -e EXTERNALADDRESS="http://127.0.0.1:8888/" -p 8888:9000 -v $PWD/config:/config -v $PWD/adaguc-services-home/:/data/adaguc-services-home/ -v $HOME/esmvaltool_input:/root/esmvaltool_input -v $HOME/esmvaltool_output:/root/esmvaltool_output -it adaguc-services-compute
 #docker exec -it  `docker ps -f ancestor=adaguc-services-compute -q` bash
 
 # PyWPS log: /data/adaguc-services-home/adaguc-services-tmp/pywps.log
+
