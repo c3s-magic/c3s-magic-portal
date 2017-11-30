@@ -27,6 +27,8 @@ services:
             - ./adaguc-services-compute/config:/config
             - ./adaguc-services-compute/adaguc-services-compute-home/:/data/adaguc-services-home/
             - /data/climexp:/data/climexp
+            - /data/esmvaltool:/data/esmvaltool
+            - /data/esmvaltool_output:/data/esmvaltool_output
         environment:
             - "EXTERNALADDRESS=https://portal.c3s-magic.eu:9000"
     c3s-magic-frontend:
