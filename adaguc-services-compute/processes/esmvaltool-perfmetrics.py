@@ -34,7 +34,7 @@ class Process(WPSProcess):
                             abstract="Creates a (sample of a) performance metrics report comparing models using ESMValTool.",
                             grassLocation=False)
 
-	model_names = ['None', 'bcc-csm1-1', 'GFDL-ESM2G', 'MPI-ESM-LR', 'MPI-ESM-MR']
+	model_names = ['', 'None', 'bcc-csm1-1', 'GFDL-ESM2G', 'MPI-ESM-LR', 'MPI-ESM-MR']
 
         self.model1 = self.addLiteralInput(identifier="model1",
                                                title="Model 1",
@@ -132,7 +132,7 @@ class Process(WPSProcess):
 	model_values = [self.model1.getValue(), self.model2.getValue(), self.model3.getValue(), self.model4.getValue()]
 
 	for value in model_values:
-	    if value != 'None':
+	    if value != 'None' and value != '':
 	        models.append(value)
 
 	variable = self.variable.getValue()
