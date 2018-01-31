@@ -1,19 +1,31 @@
-FROM c3smagic/adaguc-services
+FROM centos:7
 
-# Setup directories
-WORKDIR /data/adaguc-services-home/
+MAINTAINER Adaguc Team at KNMI <adaguc@knmi.nl>
 
-# Install climate explorer 
+VOLUME /config
+VOLUME /data
+
+#TODO: perhaps host on a standard port (443)
+EXPOSE 9000
+
 RUN yum update -y && yum install -y \
-  netcdf-fortran-devel.x86_64\
-  lapack-devel.x86_64 R\
-  python-py\
-  scipy\
-  numpy\
-  python-pandas\
-  netcdf4-python\
-  ImageMagick\
-  && yum groupinstall -y "Development tools"
+    epel-release
+
+RUN yum clean all && yum groupinstall -y "Development tools"
+
+# Install adaguc-services from JITPACK
+WORKDIR /src/adaguc-services
+RUN curl -L https://jitpack.io/com/github/KNMI/adaguc-services/1.0.1/adaguc-services-1.0.1.war > /src/adaguc-services.war
+
+# Install pywps
+WORKDIR /src
+RUN curl -L -O https://github.com/geopython/pywps/archive/pywps-3.2.5.tar.gz
+RUN tar xvf pywps-3.2.5.tar.gz
+RUN mv pywps-pywps-3.2.5 pywps
+
+
+##### Install processes and tools ####
+
 
 # install conda
 WORKDIR /src
@@ -23,21 +35,34 @@ ENV PATH=/miniconda/bin:${PATH}
 RUN conda update -y conda
 RUN conda update -y pip
 
-# ESMVALTOOL section
-
 # get esmvaltool
 WORKDIR /src
-RUN git clone https://github.com/c3s-magic/ESMValTool
+RUN git clone https://github.com/ESMValGroup/ESMValTool
 WORKDIR /src/ESMValTool
-RUN git checkout REFACTORING_backend_perfmetrics_demo
+RUN git checkout version2_knmi_sprint
 
 # install esmvaltool
-RUN conda env update --name root
+COPY esmvaltoolenvironment.yml /src/
+RUN conda env update --name esmvalcondaenv --file /src/esmvaltoolenvironment.yml
+RUN source activate esmvalcondaenv
 # workaround: ncl install from conda is broken, see https://github.com/conda-forge/ncl-feedstock/issues/25
-RUN conda install -y -c conda-forge poppler=0.52.0 xerces-c=3.1.4
-RUN python setup.py install
+#RUN conda install -y -c conda-forge poppler=0.52.0 xerces-c=3.1.4
+RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
 
-# CLIMATE EXPLORER section
+RUN yum update -y && yum install -y \
+    tomcat \
+    openssl
+    
+# Setup directories
+WORKDIR /data/adaguc-services-home/
+
+### ESMVALTOOL section ###
+
+### CLIMATE EXPLORER section ###
+
+RUN yum update -y && yum install -y \
+  netcdf-fortran-devel.x86_64 \
+   lapack-devel.x86_64 R
 
 WORKDIR /src
 RUN git clone https://github.com/andrejsim/ClimExp-fortran.git 
@@ -53,15 +78,25 @@ ENV CLIMEXPFORTRAN=/src/ClimExp-fortran/build/
 # Install wps_prov
 WORKDIR /src
 RUN git clone https://github.com/KNMI/wps_prov
-RUN cd wps_prov && python setup.py install
+# RUN cd wps_prov && python setup.py install
+WORKDIR /src/wps_prov
+RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
 
 VOLUME /src/pywps/pywps/processes/
 #  Install climexp WPS
 WORKDIR /src
 RUN git clone https://github.com/maartenplieger/ClimExp-pyapi
 
-RUN cd ClimExp-pyapi && python setup.py install
+WORKDIR /src/ClimExp-pyapi
+RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
+
+
 ENV PYTHONPATH="/src/ClimExp-pyapi/wpsproc/prov:/src/wps_prov"
+
+
+
+############### End of custom processes ###################
+
 
 ENV ADAGUC_SERVICES_HOME=/data/adaguc-services-home/
 

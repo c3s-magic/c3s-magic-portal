@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+    adaguc-services-controller:
+        build: adaguc-services-controller
+        container_name: controller.c3s-magic.eu
+        ports: 
+            - "7777:9000"
+        volumes:
+            - ./adaguc-services-controller/config:/config
+            - ./adaguc-services-controller/adaguc-datasets:/data/adaguc-datasets
+            - ./adaguc-services-controller/adaguc-services-controller-home/:/data/adaguc-services-home/
+        environment:
+            - "EXTERNALADDRESS=https://localportal.c3s-magic.eu:7777"
+            - "COMPUTE_NODE_1_URL=https://localportal.c3s-magic.eu:9000"
+            #  New application can be created at https://console.developers.google.com/apis/credentials 
+            - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
+            - "OAUTHCLIENTID=${OAUTHCLIENTID}"
+        links:
+            - localportal.c3s-magic.eu
+    localportal.c3s-magic.eu:
+        build: adaguc-services-compute
+        ports: 
+            - "9000:9000"
+        container_name: localportal.c3s-magic.eu
+        volumes:
+            - ./adaguc-services-compute/processes:/src/pywps/pywps/processes/
+            - ./adaguc-services-compute/config:/config
+            - ./adaguc-services-compute/adaguc-services-compute-home/:/data/adaguc-services-home/
+            - /data/climexp:/data/climexp
+            - /data/esmvaltool:/data/esmvaltool
+            - /data/esmvaltool_output:/data/esmvaltool_output
+        environment:
+            - "EXTERNALADDRESS=https://localportal.c3s-magic.eu:9000"
+    c3s-magic-frontend:
+        image: c3smagic/c3s-magic-frontend
+        container_name: frontend.c3s-magic.eu
+        environment: 
+          - "CONTROLLER=https://localportal.c3s-magic.eu:7777"
+          - "COMPUTE=https://localportal.c3s-magic.eu:9000"
+        ports:
+          - "8080:5000"
+
+# Add 127.0.1.1       localportal.c3s-magic.eu to /etc/hosts    (localportal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
+# Do docker-compose build --pull
+# Do docker-compose up in working directory and go to localhost:8080
+# Do docker-compose down to stop all
