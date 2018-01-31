@@ -56,7 +56,6 @@ RUN yum update -y && yum install -y \
 # Setup directories
 WORKDIR /data/adaguc-services-home/
 
-### ESMVALTOOL section ###
 
 ### CLIMATE EXPLORER section ###
 
@@ -78,12 +77,10 @@ ENV CLIMEXPFORTRAN=/src/ClimExp-fortran/build/
 # Install wps_prov
 WORKDIR /src
 RUN git clone https://github.com/KNMI/wps_prov
-# RUN cd wps_prov && python setup.py install
 WORKDIR /src/wps_prov
 RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
 
 VOLUME /src/pywps/pywps/processes/
-#  Install climexp WPS
 WORKDIR /src
 RUN git clone https://github.com/maartenplieger/ClimExp-pyapi
 
