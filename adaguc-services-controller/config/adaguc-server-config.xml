@@ -33,6 +33,17 @@
   <!-- Projections -->
   <Include location="{ADAGUC_PATH}/data/config/includes/Projection.include.xml"/>
            
+  <Style name="stipplingthreshold">
+    <Legend fixedclasses="true" tickround="1">no2</Legend>
+    <Point pointstyle="point" textcolor="#111111"/>
+    <Vector vectorstyle="barb" linecolor="#0000FF" />
+    <Stippling color="#000000" mode="threshold" discradius="1" distancey="10" distancex="10"/>
+    <Min>0</Min>
+    <Max>1</Max>
+    <RenderMethod>stippling</RenderMethod>
+    <StandardNames standard_name="anomaly_agreement"/>
+  </Style>
+  
   <!--Legends -->
   <Include location="{ADAGUC_PATH}/data/config/includes/DefaultStyles.include.xml"/>
 
