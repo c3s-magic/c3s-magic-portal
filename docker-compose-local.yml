@@ -45,3 +45,4 @@ services:
 # Do docker-compose build --pull
 # Do docker-compose up in working directory and go to localhost:8080
 # Do docker-compose down to stop all
+# docker-compose -f docker-compose-local.yml up

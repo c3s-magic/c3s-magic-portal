@@ -8,6 +8,7 @@ services:
             - "443:9000"
         volumes:
             - ./adaguc-services-controller/config:/config
+            - ./adaguc-services-controller/adaguc-datasets:/data/adaguc-datasets
             - ./adaguc-services-controller/adaguc-services-controller-home/:/data/adaguc-services-home/
         environment:
             - "EXTERNALADDRESS=https://portal.c3s-magic.eu:443"
