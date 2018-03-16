@@ -121,10 +121,15 @@ fi
 
 # Set postgres permissions
 chmod 777 /var/run/postgresql/
+
+runuser -l $PGUSERNAME "mkdir -p /var/log/adaguc/"
 runuser -l $PGUSERNAME -c "touch /var/log/adaguc/postgresql.log"
-runuser -l $PGUSERNAME -c "chmod 777 /var/log/adaguc/postgresql.log"
+chmod 777 /var/log/adaguc/postgresql.log
+
 chown $PGUSERNAME ${ADAGUCDB}
 runuser -l $PGUSERNAME -c "chmod 700 ${ADAGUCDB}"
+
+rm -f ${ADAGUCDB}/.gitignore
 
 # Check if a db already exists for given path
 dbexists=`runuser -l $PGUSERNAME -c "(ls ${ADAGUCDB}/postgresql.conf >> /dev/null 2>&1 && echo yes) || echo no"`
