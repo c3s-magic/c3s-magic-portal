@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  
+   <Style name="stipplingthreshold">
+    <Legend fixedclasses="true" tickround="1">no2</Legend>
+    <Point pointstyle="point" textcolor="#111111"/>
+    <Vector vectorstyle="barb" linecolor="#0000FF" />
+    <Stippling color="#3030FF" mode="threshold" discradius="2" distancey="12" distancex="12"/>
+    <Min>0</Min>
+    <Max>100</Max>
+    <RenderMethod>stippling</RenderMethod>
+    <!--<StandardNames standard_name="anomaly_agreement"/>-->
+    <LegendGraphic value="0.png"/>
+  </Style>
+
+  <Layer type="database">
+    <FilePath filter="">/data/adaguc-data/anomaly_agreement.nc</FilePath>
+    <Name>anomaly</Name>
+    <Variable>anomaly</Variable>
+    <Styles>auto</Styles>
+  </Layer>
+  
+  <Layer type="database">
+    <FilePath filter="">/data/adaguc-data/anomaly_agreement.nc</FilePath>
+    <Name>anomaly_agreement</Name>
+    <Variable>anomaly_agreement</Variable>
+    <Styles>stipplingthreshold</Styles>
+  </Layer>
+  
+</Configuration>  
