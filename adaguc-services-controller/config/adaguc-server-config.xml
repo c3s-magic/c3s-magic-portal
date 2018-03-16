@@ -39,7 +39,7 @@
     <Vector vectorstyle="barb" linecolor="#0000FF" />
     <Stippling color="#000000" mode="threshold" discradius="1" distancey="10" distancex="10"/>
     <Min>0</Min>
-    <Max>1</Max>
+    <Max>100</Max>
     <RenderMethod>stippling</RenderMethod>
     <StandardNames standard_name="anomaly_agreement"/>
   </Style>
