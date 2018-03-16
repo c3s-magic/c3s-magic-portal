@@ -3,4 +3,6 @@ adaguc-services-compute/adaguc-services-compute-home/adaguc-services-tmp/*
 adaguc-services-compute/adaguc-services-compute-home/wpsoutputs/*
 adaguc-services-controller/adaguc-services-controller-home/adaguc-services-tmp
 adaguc-services-controller/adaguc-services-controller-home/data/
+adaguc-services-controller/adagucdb/
+adaguc-services-controller/logs/
 *.pyc
