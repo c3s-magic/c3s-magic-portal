@@ -26,7 +26,7 @@ services:
         volumes:
             - ./adaguc-services-compute/processes:/src/pywps/pywps/processes/
             - ./adaguc-services-compute/config:/config
-            - ./adaguc-services-compute/adaguc-services-compute-home/:/data/adaguc-services-home/
+            - /data/adaguc-services-compute-home/:/data/adaguc-services-home/
             - /data/climexp:/data/climexp
             - /data/esmvaltool:/data/esmvaltool
             - /data/esmvaltool_output:/data/esmvaltool_output
@@ -40,6 +40,8 @@ services:
           - "COMPUTE=https://portal.c3s-magic.eu:9000"
         ports:
           - "80:5000"
+        volumes:
+          - ./letsencrypt/.well-known:/frontend/c3s-magic-frontend/dist/.well-known
 
 # Add 127.0.1.1       portal.c3s-magic.eu to /etc/hosts    (portal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
 # Do docker-compose build --pull
