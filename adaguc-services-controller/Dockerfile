@@ -1,4 +1,4 @@
-FROM adaguc-services
+FROM c3smagic/adaguc-services
 
 # Setup directories
 WORKDIR /data/adaguc-services-home/
