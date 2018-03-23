@@ -60,7 +60,7 @@
     <export>ADAGUC_PATH=/adaguc/adaguc-server-master//</export>
     <export>ADAGUC_CONFIG=/config/adaguc-server-config.xml</export>
     <export>ADAGUC_DATARESTRICTION=FALSE</export>
-    <export>ADAGUC_LOGFILE={ENV.ADAGUC_SERVICES_HOME}/adaguc-services-tmp/adaguc.autoresource.log</export>
+    <export>ADAGUC_LOGFILE=/var/log/adaguc/adaguc.autoresource.log</export>
     <export>ADAGUC_FONT=/adaguc/adaguc-server-master//data/fonts/FreeSans.ttf</export>
   </adaguc-server>
   

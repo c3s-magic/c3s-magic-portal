@@ -33,7 +33,7 @@
   <!-- Projections -->
   <Include location="{ADAGUC_PATH}/data/config/includes/Projection.include.xml"/>
            
-  <Style name="stipplingthreshold">
+  <Style name="auto_stipplingthreshold">
     <Legend fixedclasses="true" tickround="1">no2</Legend>
     <Point pointstyle="point" textcolor="#111111"/>
     <Vector vectorstyle="barb" linecolor="#0000FF" />

@@ -5,7 +5,7 @@
     <Legend fixedclasses="true" tickround="1">no2</Legend>
     <Point pointstyle="point" textcolor="#111111"/>
     <Vector vectorstyle="barb" linecolor="#0000FF" />
-    <Stippling color="#0000DDA0" mode="threshold" discradius="5" distancey="0" distancex="0"/>
+    <Stippling color="#0000DDD0" mode="threshold" discradius="4" distancey="0" distancex="0"/>
     <Min>0</Min>
     <Max>100</Max>
     <RenderMethod>stippling</RenderMethod>
