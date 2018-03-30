@@ -1,4 +1,3 @@
-!Namelist
 ###############################################################################
 # namelist_perfmetrics_CMIP5.xml
 #
@@ -21,29 +20,69 @@
 #
 # This namelist is part of the ESMValTool
 ###############################################################################
+---
 
-  MODELS:
-    {% for model in models %}{{ model }}
-    {% endfor %}
+models:
+  {% for model in models %}{{ model }}
+  {% endfor %}
 
-  PREPROCESS:
-    - {id: pp1, select_level: {levels: 85000, scheme: linear}, target_grid: ref_model, regrid_scheme: linear, mask_fillvalues: {threshold_percent: 0.95}, mask_landocean: None, multimodel_mean: False}
+preprocessors:
+  pp850:
+    extract_levels:
+      levels: 85000
+      scheme: linear
+    regrid:
+      target_grid: ERA-Interim
+      scheme: linear
+    mask_fillvalues:
+      threshold_fraction: 0.95
+    multi_model_mean:
+      span: overlap #or full
+      exclude: {GFDL-ESM2G}
 
-  CONFIG:
-    var_def_scripts: ./variable_defs
-    var_only_case: 0
+diagnostics:
+  ta_850_global:
+    description: Air temperature at 850 hPa global.
+    variables:
+      ta:
+        preprocessor: pp850
+        reference_model: ERA-Interim
+        alternative_model: NCEP
+        mip: Amon
+        field: T3M
+    additional_models:
+      - {model: ERA-Interim,  project: OBS,  type: reanaly,  version: 1,  start_year: {{ start_year }},  end_year: {{ end_year }},  tier: 3}
+      - {model: NCEP,         project: OBS,  type: reanaly,  version: 1,  start_year: {{ start_year }},  end_year: {{ end_year }},  tier: 2}
+    scripts:
+      main: &main_script_settings
+        script: perfmetrics_main.ncl
+        plot_type: cycle       # Plot type ('cycle' [time], 'zonal' [plev, lat], 'latlon' [lat, lon], 'cycle_latlon' [time, lat, lon])
+        time_avg: monthlyclim  # Time average ('opt' argument of time_operations.ncl)
+        region: Global         # Selected region ('Global', 'Tropics', 'NH extratropics', 'SH extratropics')
+        plot_stddev: ref_model # Plot standard deviation ('all', 'none', 'ref_model' or given model name)
+        legend_outside: true   # Plot legend in a separate file
+        styleset: CMIP5        # Plot style
+      main_grading: &main_grading_script_settings
+        <<: *main_script_settings
+        plot_type: cycle_latlon        # Plot type ('cycle' [time], 'zonal' [plev, lat], 'latlon' [lat, lon], 'cycle_latlon' [time, lat, lon])
+        draw_plots: false              # Do not draw plots
+        calc_grading: true             # Calculate grading
+        metric: RMSD                   # Metric ('RMSD', 'BIAS', taylor')
+        normalization: centered_median # Normalization ('mean', 'median', 'centered_median')
+        MultiModelMean: true           # Multi-model mean
+        MultiModelMedian: true         # Multi-model median
+      main_taylor: &main_taylor_script_settings
+        <<: *main_grading_script_settings
+        metric: taylor                 # Metric ('RMSD', 'BIAS', taylor')
 
-  DIAGNOSTICS:
-
-    ANNUAL_CYCLE_ta:
-      !Diagnostic
-      id: ANNUAL_CYCLE_ta
-      description: tutorial diagnostic
-      variables:
-        - {name: {{ variable }}, ref_model: ['ERA-Interim','NCEP'], field: T3M, only: None, preproc_id: pp1}
-      scripts:
-        # Annual cycle plot
-        - {script: perfmetrics_main.ncl,  cfg_file: ./nml/cfg_perfmetrics/CMIP5/cfg_perfmetrics_cycle_monthlyclim_glob.ncl}
-      additional_models:
-        - {name: ERA-Interim,  project: OBS,  type: reanaly,  version: 1,  start_year: {{ start_year }},  end_year: {{ end_year }},  tier: 3}
-        - {name: NCEP,         project: OBS,  type: reanaly,  version: 1,  start_year: {{ start_year }},  end_year: {{ end_year }},  tier: 2}
+  grading_collect:
+    description: Wrapper to collect and plot previously calculated gradings.
+    scripts:
+      grading_collect:
+        script: perfmetrics_grading_collect.ncl
+        ancestors: ['*/main_grading']
+        label_bounds: [-0.5, 0.5]
+        label_scale: 0.1
+        disp_values: false
+        cm_interval: [2, 241]
+        sort: true  # Sort model in alphabetic order (excluding MMM)

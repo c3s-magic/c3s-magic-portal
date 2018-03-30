@@ -181,7 +181,7 @@ class Process(WPSProcess):
 
         model_descriptions = []
 	for model in models:
-	    model_descriptions.append('- {name: %s, project: CMIP5, mip: %s, exp: %s, ensemble: %s, start_year: %s, end_year: %s}' % (model, mip, experiment,ensemble_member, start_year, end_year))
+	    model_descriptions.append('- {model: %s, project: CMIP5, exp: %s, ensemble: %s, start_year: %s, end_year: %s}' % (model, experiment,ensemble_member, start_year, end_year))
 
         self.status.set("setting up namelist for esmvaltool", 10)
 
@@ -236,7 +236,7 @@ class Process(WPSProcess):
         self.status.set("processing output", 90)
 
         #output_image = glob.glob(output_folder_path + "/tsline/*.png").pop()
-        output_image = glob.glob(output_folder_path + "/plot/*_namelist_demo/perfmetrics_main/*.png").pop()
+        output_image = glob.glob(output_folder_path + "/namelist_demo*/plots/*/*/*.png").pop()
 
         self.cmd(['mogrify', '-trim', '-bordercolor', 'white', '-border', '10x10', output_image])
 
@@ -249,7 +249,7 @@ class Process(WPSProcess):
 
         #KNMI WPS Specific Set output
 
-        output_nc = glob.glob(output_folder_path + "/work/*_namelist_demo/perfmetrics_main/*.nc").pop()
+        output_nc = glob.glob(output_folder_path + "/namelist_demo*/work/*/*/*.nc").pop()
 
         rel_output_nc = os.path.relpath(output_nc, output_folder_path)
 

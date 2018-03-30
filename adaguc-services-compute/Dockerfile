@@ -8,8 +8,11 @@ VOLUME /data
 #TODO: perhaps host on a standard port (443)
 EXPOSE 9000
 
+# ImageMagick installed for cropping esmvaltool results in the wps process
+
 RUN yum update -y && yum install -y \
-    epel-release
+    epel-release \
+    ImageMagick
 
 RUN yum clean all && yum groupinstall -y "Development tools"
 

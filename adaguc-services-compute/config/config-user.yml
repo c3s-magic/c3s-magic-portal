@@ -15,10 +15,7 @@ exit_on_warning: False
 # Plot file format? [ps]/pdf/png/eps/epsi
 output_file_type: png
 # Destination directories
-run_dir: /data/esmvaltool_output
-preproc_dir: /data/esmvaltool_output/preproc
-work_dir: /data/esmvaltool_output/work
-plot_dir: /data/esmvaltool_output/plots
+output_dir: {{ output_dir }}
 # Save intermediary cubes in the preprocessor True/[False]
 save_intermediary_cubes: True
 
