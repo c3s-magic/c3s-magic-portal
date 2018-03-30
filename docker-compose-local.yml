@@ -13,6 +13,7 @@ services:
             - ./adaguc-services-controller/adaguc-datasets:/data/adaguc-datasets
             - /data/adaguc-data:/data/adaguc-data
             - ./adaguc-services-controller/adaguc-services-controller-home/:/data/adaguc-services-home/
+            - ./adaguc-services-controller/security:/security
         environment:
             - "EXTERNALADDRESS=https://localportal.c3s-magic.eu:7777"
             - "COMPUTE_NODE_1_URL=https://localportal.c3s-magic.eu:9000"
@@ -30,6 +31,7 @@ services:
             - ./adaguc-services-compute/processes:/src/pywps/pywps/processes/
             - ./adaguc-services-compute/config:/config
             - ./adaguc-services-compute/adaguc-services-compute-home/:/data/adaguc-services-home/
+            - ./adaguc-services-compute/security:/security
             - /data/climexp:/data/climexp
             - /data/esmvaltool:/data/esmvaltool
             - /data/esmvaltool_output:/data/esmvaltool_output

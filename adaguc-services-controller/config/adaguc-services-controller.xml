@@ -23,15 +23,15 @@
   
   <security>
     <truststorepassword>changeit</truststorepassword>
-    <truststore>{ENV.ADAGUC_SERVICES_HOME}/security/truststore.ts</truststore>
+    <truststore>/security/truststore.ts</truststore>
     <!--<trustrootscadirectory>{ENV.ADAGUC_SERVICES_HOME}/src/.globus/certificates/</trustrootscadirectory>-->
-    <keystore>{ENV.ADAGUC_SERVICES_HOME}/security/keystore.jks</keystore>
+    <keystore>/security/keystore.jks</keystore>
     <keystorepassword>password</keystorepassword>
     <keystoretype>JKS</keystoretype>
     <keyalias>tomcat</keyalias>  
     <tokenapi>
-      <cacertificate>{ENV.ADAGUC_SERVICES_HOME}/security/adaguc-services-ca.cert</cacertificate>
-      <caprivatekey>{ENV.ADAGUC_SERVICES_HOME}/security/adaguc-services-ca.key</caprivatekey>
+      <cacertificate>/security/adaguc-services-ca.cert</cacertificate>
+      <caprivatekey>/security/adaguc-services-ca.key</caprivatekey>
       <remote-instances>
         <adaguc-service>{ENV.COMPUTE_NODE_1_URL}</adaguc-service>
   

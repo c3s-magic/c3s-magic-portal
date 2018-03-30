@@ -23,9 +23,9 @@
   
   <security>
     <truststorepassword>changeit</truststorepassword>
-    <truststore>{ENV.ADAGUC_SERVICES_HOME}/security/truststore.ts</truststore>
+    <truststore>/security/truststore.ts</truststore>
     <!--<trustrootscadirectory>{ENV.ADAGUC_SERVICES_HOME}/src/.globus/certificates/</trustrootscadirectory>-->
-    <keystore>{ENV.ADAGUC_SERVICES_HOME}/security/keystore.jks</keystore>
+    <keystore>/security/keystore.jks</keystore>
     <keystorepassword>password</keystorepassword>
     <keystoretype>JKS</keystoretype>
     <keyalias>tomcat</keyalias>  

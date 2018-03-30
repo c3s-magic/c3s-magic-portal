@@ -6,3 +6,5 @@ adaguc-services-controller/adaguc-services-controller-home/data/
 adaguc-services-controller/adagucdb/
 adaguc-services-controller/logs/
 *.pyc
+adaguc-services-controller/security/
+adaguc-services-compute/security/

@@ -1,7 +1,7 @@
 #!/bin/bash
 echo ADAGUC_SERVICES_HOME=${ADAGUC_SERVICES_HOME}
 
-ADAGUC_SERVICES_SECURITY=${ADAGUC_SERVICES_HOME}/security
+ADAGUC_SERVICES_SECURITY=/security
 
 # Setup dirs
 mkdir -p ${ADAGUC_SERVICES_HOME}/data/adaguc-services-base
