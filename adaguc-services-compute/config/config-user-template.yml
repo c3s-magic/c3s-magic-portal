@@ -15,12 +15,9 @@ exit_on_warning: False
 # Plot file format? [ps]/pdf/png/eps/epsi
 output_file_type: png
 # Destination directories
-run_dir: /data/esmvaltool_output
-preproc_dir: /data/esmvaltool_output/preproc
-work_dir: {{ output_folder_path }}/work
-plot_dir: {{ output_folder_path }}/plot
+output_dir: {{ output_folder_path }}
 # Save intermediary cubes in the preprocessor True/[False]
-save_intermediary_cubes: True
+save_intermediary_cubes: False
 
 rootpath:
   # Rootpath to CMIP5 data
