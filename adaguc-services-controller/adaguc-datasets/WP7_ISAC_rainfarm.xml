@@ -8,7 +8,7 @@
     <Min>0.0</Min>
     <Max>1</Max>
     <!--<Log>10</Log>-->
-    <RenderMethod>bilinear</RenderMethod>
+    <RenderMethod>bilinear,nearest</RenderMethod>
   </Style>
 
   <Layer type="database">
