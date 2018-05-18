@@ -10,7 +10,7 @@
     <Max>1000</Max>
     <RenderMethod>nearest</RenderMethod>
     <NameMapping name="nearest"   title="Land sea mask" abstract="Land sea mask"/>
-    <FeatureInterval match=".*" matchid="abbrev" bgcolor="#CCCCFF" fillcolor="#CCFFCC"/>
+    <FeatureInterval match=".*" matchid="abbrev" bgcolor="#00a7be" fillcolor="#bbdaa4"/>
   </Style>
 
   <Style name="overlay">
