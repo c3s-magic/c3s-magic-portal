@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  
+  <Legend name="anomaly_agreement" type="svg" file="/data/adaguc-datasets/legends/precip2_17lev.svg"/>
+
+  <Style name="anomaly_agreement">
+    <Legend fixedclasses="true" tickinterval="0.1" >anomaly_agreement</Legend>
+    <Min>0.0</Min>
+    <Max>1</Max>
+    <!--<Log>10</Log>-->
+    <RenderMethod>bilinear</RenderMethod>
+  </Style>
+
+  <Layer type="database">
+    <FilePath filter="">/data/adaguc-datasets/WP7_ISAC_rainfarm/rainfarm_output.nc</FilePath>
+    <Name>pr</Name>
+    <Title>Precipitation flux</Title>
+    <Variable>pr</Variable>
+    <Styles>anomaly_agreement</Styles>
+    
+    <DataPostProc algorithm="ax+b" a="3600" b="0" units="mm/h-1"/> <!-- kg/m-2/s-1 is mm/seconds, to mm/hour -->
+  </Layer>
+  
+</Configuration>  
