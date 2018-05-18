@@ -32,7 +32,7 @@
     <Legend fixedclasses="true" tickround=".1">anomaly_agreement</Legend>
     <Min>-1</Min>
     <Max>1</Max>
-    <RenderMethod>nearest</RenderMethod>
+    <RenderMethod>nearest,bilinear</RenderMethod>
   </Style>
 
   
