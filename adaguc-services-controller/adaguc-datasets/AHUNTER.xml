@@ -3,7 +3,15 @@
   
   <Legend name="anomaly_agreement" type="svg" file="/data/adaguc-datasets/legends/precip2_17lev.svg"/>
 
-  <Style name="anomaly_agreement">
+  <Style name="tasmax-extreme-spell-1">
+    <Legend fixedclasses="true" tickinterval="5" >elevation</Legend>
+    <Min>0.0</Min>
+    <Max>60</Max>
+    <!--<Log>10</Log>-->
+    <RenderMethod>bilinear,nearest</RenderMethod>
+  </Style>
+
+  <Style name="tasmax-extreme-spell-2">
     <Legend fixedclasses="true" tickinterval="5" >anomaly_agreement</Legend>
     <Min>0.0</Min>
     <Max>60</Max>
@@ -16,7 +24,7 @@
     <Name>tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</Name>
     <Title>Tasmax - Extreme spell duration - IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01</Title>
     <Variable>index</Variable>
-    <Styles>anomaly_agreement</Styles>
+    <Styles>tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles>
   </Layer>
   
   
@@ -25,7 +33,7 @@
     <Name>tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</Name>
     <Title>Tasmax - Extreme spell duration - IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01</Title>
     <Variable>index</Variable>
-    <Styles>anomaly_agreement</Styles>
+    <Styles>tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles>
   </Layer>
   
 </Configuration>  
