@@ -78,4 +78,10 @@
       <description>Sign in with Google</description>                                                                                                                                                                               
     </provider>                                                                                                                                                                                                                                            
   </oauth2> 
+  
+  <autowms>
+    <enabled>true</enabled>
+    <autowmspath>/data/adaguc-autowms/</autowmspath>
+    <datasetpath>/data/adaguc-datasets/</datasetpath>
+  </autowms>
 </adaguc-services>

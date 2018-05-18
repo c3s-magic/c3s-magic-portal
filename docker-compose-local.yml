@@ -45,6 +45,14 @@ services:
           - "COMPUTE=https://localportal.c3s-magic.eu:9000"
         ports:
           - "8080:5000"
+    adaguc-viewer:
+        image: openearth/adaguc-viewer
+        container_name: viewer.c3s-magic.eu
+        ports:
+          - "8081:80"
+        environment:
+          - "ADAGUCSERVICES_AUTOWMS=https://localportal.c3s-magic.eu:7777/autowms?"
+
 
 # Add 127.0.1.1       localportal.c3s-magic.eu to /etc/hosts    (localportal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
 # Do docker-compose build --pull
