@@ -12,6 +12,7 @@ services:
             - ./adaguc-services-controller/logs:/var/log/adaguc
             - ./adaguc-services-controller/adaguc-datasets:/data/adaguc-datasets
             - /data/adaguc-data:/data/adaguc-data
+            - /data/adaguc-data:/data/adaguc-autowms
             - ./adaguc-services-controller/adaguc-services-controller-home/:/data/adaguc-services-home/
             - ./adaguc-services-controller/security:/security
         environment:
