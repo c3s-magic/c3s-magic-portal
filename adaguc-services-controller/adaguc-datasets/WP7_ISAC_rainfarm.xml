@@ -12,7 +12,7 @@
   </Style>
 
   <Layer type="database">
-    <FilePath filter="">/data/adaguc-datasets/WP7_ISAC_rainfarm/rainfarm_output.nc</FilePath>
+    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_ISAC_rainfarm/rainfarm_output.nc</FilePath>
     <Name>pr</Name>
     <Title>Precipitation flux</Title>
     <Variable>pr</Variable>
@@ -20,5 +20,17 @@
     
     <DataPostProc algorithm="ax+b" a="3600" b="0" units="mm/h-1"/> <!-- kg/m-2/s-1 is mm/seconds, to mm/hour -->
   </Layer>
+
+  <Layer type="database">
+    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_ISAC_rainfarm/rainfarm_weights_output.nc</FilePath>
+    <Name>pr</Name>
+    <Title>Precipitation flux</Title>
+    <Variable>pr</Variable>
+    <Styles>auto</Styles>
+    
+    <!-- kg/m-2/s-1 is mm/seconds, to mm/hour -->
+    <!--<DataPostProc algorithm="ax+b" a="3600" b="0" units="mm/h-1"/> -->
+  </Layer>
+
   
 </Configuration>  

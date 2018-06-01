@@ -12,6 +12,7 @@ services:
             - ./adaguc-services-controller/logs:/var/log/adaguc
             - ./adaguc-services-controller/adaguc-datasets:/data/adaguc-datasets
             - /data/adaguc-data:/data/adaguc-data
+            - /data/adaguc-data:/data/adaguc-autowms
             - ./adaguc-services-controller/adaguc-services-controller-home/:/data/adaguc-services-home/
             - ./adaguc-services-controller/security:/security
         environment:
@@ -47,6 +48,13 @@ services:
           - "80:5000"
         volumes:
           - ./letsencrypt/.well-known:/frontend/c3s-magic-frontend/dist/.well-known
+   adaguc-viewer:
+        image: openearth/adaguc-viewer
+        container_name: viewer.c3s-magic.eu
+        ports:
+          - "8080:80"
+        environment:
+          - "ADAGUCSERVICES_AUTOWMS=https://portal.c3s-magic.eu:443/autowms?"
 
 # Add 127.0.1.1       portal.c3s-magic.eu to /etc/hosts    (portal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
 # Do docker-compose build --pull
