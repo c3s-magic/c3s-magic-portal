@@ -3,8 +3,8 @@
   <!-- /data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/cdd_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc -->
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/cdd_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>cdd_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</Name>
+    <Title>cdd_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -12,8 +12,8 @@
   <!-- /data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/cdd_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc -->
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/cdd_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>cdd_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Name>
+    <Title>cdd_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -21,8 +21,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/cdd_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>cdd_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Name>
+    <Title>cdd_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -30,8 +30,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/rx5day_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>rx5day_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</Name>
+    <Title>rx5day_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -39,8 +39,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/rx5day_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>rx5day_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Name>
+    <Title>rx5day_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -48,8 +48,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/rx5day_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>rx5day_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Name>
+    <Title>rx5day_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -57,8 +57,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/tx10p_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>tx10p_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</Name>
+    <Title>tx10p_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -66,8 +66,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/tx10p_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>tx10p_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Name>
+    <Title>tx10p_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -75,8 +75,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/tx10p_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>tx10p_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Name>
+    <Title>tx10p_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -84,8 +84,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/tx90p_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>tx90p_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</Name>
+    <Title>tx90p_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -93,8 +93,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/tx90p_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>tx90p_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Name>
+    <Title>tx90p_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -102,8 +102,8 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/tx90p_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>tx90p_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Name>
+    <Title>tx90p_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
@@ -111,24 +111,24 @@
 
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/Wx_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>Wx_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.n</Name>
+    <Title>Wx_IPSL-CM5A-LR_historical_1960-01-02_1991-12-02.n</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
 <!-- /data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/Wx_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc -->
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/Wx_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>Wx_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Name>
+    <Title>Wx_IPSL-CM5A-LR_rcp26_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
 <!-- /data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/Wx_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc -->
   <Layer type="database">
     <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic/WP7_BSC_ACI_Components/Wx_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>index</Name>
-    <Title>index</Title>
+    <Name>Wx_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.n</Name>
+    <Title>Wx_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.n</Title>
     <Variable>index</Variable>
     <Abstract>index</Abstract>
   </Layer>
