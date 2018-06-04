@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  
+  <Layer type="database">
+    <FilePath filter="">/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/RegimesPattern_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Variable>Regimes</Variable>
+    <Styles>auto</Styles>
+  </Layer>
+  
+  <!-- adaguc-server/bin/adagucserver - -getlayers - -file /data/adaguc-data/c3smagic/WP4-6_ISAC_miles/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc -->
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>Patterns</Name>
+    <Title>EOFs Loading Pattern</Title>
+    <Variable>Patterns</Variable>
+    <Abstract>EOFs Loading Pattern</Abstract>
+    <Styles>auto</Styles>
+
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>PCs</Name>
+    <Title>PCs timeseries</Title>
+    <Variable>PCs</Variable>
+    <Abstract>PCs timeseries</Abstract>
+    <Styles>auto</Styles>
+
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>Regressions</Name>
+    <Title>EOFs Linear Regressions</Title>
+    <Variable>Regressions</Variable>
+    <Abstract>EOFs Linear Regressions</Abstract>
+    <Styles>auto</Styles>
+  </Layer>
+
+
+  
+  
+  <!--adaguc-server/bin/adagucserver - -getlayers - -file /data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc  --> 
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>TM90</Name>
+    <Title>Tibaldi-Molteni 1990 Instantaneous Blocking frequency</Title>
+    <Variable>TM90</Variable>
+    <Abstract>Tibaldi-Molteni 1990 Instantaneous Blocking frequency</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>InstBlock</Name>
+    <Title>Instantaneous Blocking frequency</Title>
+    <Variable>InstBlock</Variable>
+    <Abstract>Instantaneous Blocking frequency</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>ExtraBlock</Name>
+    <Title>Instantaneous Blocking frequency (GHGS2)</Title>
+    <Variable>ExtraBlock</Variable>
+    <Abstract>Instantaneous Blocking frequency (GHGS2)</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>Z500</Name>
+    <Title>Geopotential Height</Title>
+    <Variable>Z500</Variable>
+    <Abstract>Geopotential Height</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>MGI</Name>
+    <Title>MGI index</Title>
+    <Variable>MGI</Variable>
+    <Abstract>MGI index</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>BI</Name>
+    <Title>BI index</Title>
+    <Variable>BI</Variable>
+    <Abstract>BI index</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>CN</Name>
+    <Title>Cyclonic RWB frequency</Title>
+    <Variable>CN</Variable>
+    <Abstract>Cyclonic RWB frequency</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>ACN</Name>
+    <Title>Anticyclonic RWB frequency</Title>
+    <Variable>ACN</Variable>
+    <Abstract>Anticyclonic RWB frequency</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>BlockEvents</Name>
+    <Title>Blocking Events frequency</Title>
+    <Variable>BlockEvents</Variable>
+    <Abstract>Blocking Events frequency</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>LongBlockEvents</Name>
+    <Title>10-day Blocking Events frequency</Title>
+    <Variable>LongBlockEvents</Variable>
+    <Abstract>10-day Blocking Events frequency</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>DurationEvents</Name>
+    <Title>Blocking Events duration</Title>
+    <Variable>DurationEvents</Variable>
+    <Abstract>Blocking Events duration</Abstract>
+  </Layer>
+
+  <Layer type="database">
+    <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/BlockClim_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>NumberEvents</Name>
+    <Title>Blocking Events number</Title>
+    <Variable>NumberEvents</Variable>
+    <Abstract>Blocking Events number</Abstract>
+  </Layer>
+
+
+</Configuration>  
