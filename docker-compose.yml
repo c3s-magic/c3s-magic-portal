@@ -39,7 +39,7 @@ services:
         environment:
             - "EXTERNALADDRESS=https://portal.c3s-magic.eu:9000"
     c3s-magic-frontend:
-        image: c3smagic/c3s-magic-frontend
+        image: c3smagic/c3s-magic-frontend:demo
         container_name: frontend.c3s-magic.eu
         environment: 
           - "CONTROLLER=https://portal.c3s-magic.eu:443"
@@ -48,7 +48,7 @@ services:
           - "80:5000"
         volumes:
           - ./letsencrypt/.well-known:/frontend/c3s-magic-frontend/dist/.well-known
-   adaguc-viewer:
+    adaguc-viewer:
         image: openearth/adaguc-viewer
         container_name: viewer.c3s-magic.eu
         ports:
