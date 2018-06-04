@@ -13,8 +13,8 @@
 
   <Layer type="database">
     <FilePath filter="">/data/adaguc-data/c3smagic/WP7_ISAC_rainfarm/rainfarm_output.nc</FilePath>
-    <Name>pr</Name>
-    <Title>Precipitation flux</Title>
+    <Name>pr_rainfarm_output.nc</Name>
+    <Title>Precipitation flux rainfarm_output.nc</Title>
     <Variable>pr</Variable>
     <Styles>anomaly_agreement</Styles>
     
@@ -23,8 +23,8 @@
 
   <Layer type="database">
     <FilePath filter="">/data/adaguc-data/c3smagic/WP7_ISAC_rainfarm/rainfarm_weights_output.nc</FilePath>
-    <Name>pr</Name>
-    <Title>Precipitation flux</Title>
+    <Name>pr_rainfarm_weights_output.nc</Name>
+    <Title>Precipitation weights</Title>
     <Variable>pr</Variable>
     <Styles>auto</Styles>
     
