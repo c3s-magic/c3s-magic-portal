@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration>
-  <!-- adaguc-server/bin/adagucserver --getlayers --file /data/adaguc-data/c3smagic/WP5_ISAC_ensclus/ens_anomalies_pr_5ens_JJA_Eu_hist.nc 
+  <!-- adaguc-server/bin/adagucserver - -getlayers - -file /data/adaguc-data/c3smagic/WP5_ISAC_ensclus/ens_anomalies_pr_5ens_JJA_Eu_hist.nc 
  -->
   
   <Layer type="database">

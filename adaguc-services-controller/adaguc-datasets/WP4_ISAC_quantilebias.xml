@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration>
-  <!-- adaguc-server/bin/adagucserver --getlayers --file /data/adaguc-data/c3smagic/WP4_ISAC_quantilebias/MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc -->
+  <!-- adaguc-server/bin/adagucserver - -getlayers - -file /data/adaguc-data/c3smagic/WP4_ISAC_quantilebias/MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc -->
   
   <Layer type="database">
     <FilePath>/data/adaguc-data/c3smagic/WP4_ISAC_quantilebias/MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc</FilePath>
