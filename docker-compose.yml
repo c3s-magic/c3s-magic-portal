@@ -44,6 +44,7 @@ services:
         environment: 
           - "CONTROLLER=https://portal.c3s-magic.eu:443"
           - "COMPUTE=https://portal.c3s-magic.eu:9000"
+          - "VIEWER=http://portal.c3s-magic.eu:8080"
         ports:
           - "80:3000"
         volumes:
