@@ -39,18 +39,19 @@ RUN conda update -y conda
 RUN conda update -y pip
 
 # get esmvaltool
-WORKDIR /src
-RUN git clone https://github.com/ESMValGroup/ESMValTool
-WORKDIR /src/ESMValTool
-RUN git checkout version2_knmi_sprint
+#WORKDIR /src
+#RUN git clone https://github.com/ESMValGroup/ESMValTool
+#WORKDIR /src/ESMValTool
+##RUN git checkout version2_knmi_sprint
+#RUN git checkout REFACTORING_backend
 
 # install esmvaltool
-COPY esmvaltoolenvironment.yml /src/
-RUN conda env update --name esmvalcondaenv --file /src/esmvaltoolenvironment.yml
-RUN source activate esmvalcondaenv
+#COPY esmvaltoolenvironment.yml /src/
+#RUN conda env update --name esmvalcondaenv --file /src/esmvaltoolenvironment.yml
+#RUN source activate esmvalcondaenv
 # workaround: ncl install from conda is broken, see https://github.com/conda-forge/ncl-feedstock/issues/25
 #RUN conda install -y -c conda-forge poppler=0.52.0 xerces-c=3.1.4
-RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
+#RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
 
 RUN yum update -y && yum install -y \
     tomcat \
@@ -81,14 +82,14 @@ ENV CLIMEXPFORTRAN=/src/ClimExp-fortran/build/
 WORKDIR /src
 RUN git clone https://github.com/KNMI/wps_prov
 WORKDIR /src/wps_prov
-RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
+#RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
 
 VOLUME /src/pywps/pywps/processes/
 WORKDIR /src
 RUN git clone https://github.com/maartenplieger/ClimExp-pyapi
 
 WORKDIR /src/ClimExp-pyapi
-RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
+#RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
 
 
 ENV PYTHONPATH="/src/ClimExp-pyapi/wpsproc/prov:/src/wps_prov"
