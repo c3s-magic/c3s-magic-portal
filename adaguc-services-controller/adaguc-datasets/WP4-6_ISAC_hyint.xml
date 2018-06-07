@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>pry from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Annual mean precipitation from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>pry</Variable>
+    <Abstract>Annual mean precipitation</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>dsl from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Annual mean dry spell length from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>dsl</Variable>
+    <Abstract>Annual mean dry spell length</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>wsl from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Annual mean wet spell length from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>wsl</Variable>
+    <Abstract>Annual mean wet spell length</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>int from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Annual mean precipitation intensity from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>int</Variable>
+    <Abstract>Annual mean precipitation intensity</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>pa from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Precipitation area: area over which of any given day precipitation occurs. from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>pa</Variable>
+    <Abstract>Precipitation area: area over which of any given day precipitation occurs.</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>r95 from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>r95 from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>r95</Variable>
+    <Abstract>r95</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>hyint from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Hydroclimatic intensity index from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>hyint</Variable>
+    <Abstract>Hydroclimatic intensity index</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>pry_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Annual mean precipitation averaged over available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>pry_mean</Variable>
+    <Abstract>Normalization function: Annual mean precipitation averaged over available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>dsl_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Annual mean dry spell length averaged over available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>dsl_mean</Variable>
+    <Abstract>Normalization function: Annual mean dry spell length averaged over available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>wsl_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Annual mean wet spell length averaged over available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>wsl_mean</Variable>
+    <Abstract>Normalization function: Annual mean wet spell length averaged over available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>int_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Annual mean precipitation intensity averaged over 
+                                 available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>int_mean</Variable>
+    <Abstract>Normalization function: Annual mean precipitation intensity averaged over 
+                                 available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>pa_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Precipitation ara averaged over 
+                                 available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>pa_mean</Variable>
+    <Abstract>Normalization function: Precipitation ara averaged over 
+                                 available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>r95_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>r95_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>r95_mean</Variable>
+    <Abstract>r95_mean</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>hyint_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>hyint_mean from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>hyint_mean</Variable>
+    <Abstract>hyint_mean</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>pry_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Standard deviation of the annual mean precipitation 
+                                          averaged over available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>pry_mean_sd</Variable>
+    <Abstract>Normalization function: Standard deviation of the annual mean precipitation 
+                                          averaged over available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>dsl_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Standard deviation of the annual mean dry spell length 
+                                          averaged over available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>dsl_mean_sd</Variable>
+    <Abstract>Normalization function: Standard deviation of the annual mean dry spell length 
+                                          averaged over available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>wsl_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Standard deviation of the annual mean wet spell length 
+                                          averaged over available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>wsl_mean_sd</Variable>
+    <Abstract>Normalization function: Standard deviation of the annual mean wet spell length 
+                                          averaged over available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>int_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Standard deviation of the annual mean precipitation intensity averaged over 
+                                 available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>int_mean_sd</Variable>
+    <Abstract>Normalization function: Standard deviation of the annual mean precipitation intensity averaged over 
+                                 available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>pa_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalization function: Standard deviation of the precipitation area averaged over 
+                                 available XX century data from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>pa_mean_sd</Variable>
+    <Abstract>Normalization function: Standard deviation of the precipitation area averaged over 
+                                 available XX century data</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>r95_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>r95_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>r95_mean_sd</Variable>
+    <Abstract>r95_mean_sd</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>hyint_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>hyint_mean_sd from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>hyint_mean_sd</Variable>
+    <Abstract>hyint_mean_sd</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>pry_norm from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalized annual mean precipitation from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>pry_norm</Variable>
+    <Abstract>Normalized annual mean precipitation</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>dsl_norm from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalized annual mean dry spell length from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>dsl_norm</Variable>
+    <Abstract>Normalized annual mean dry spell length</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>wsl_norm from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalized annual mean wet spell length from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>wsl_norm</Variable>
+    <Abstract>Normalized annual mean wet spell length</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>int_norm from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalized annual mean precipitation intensity from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>int_norm</Variable>
+    <Abstract>Normalized annual mean precipitation intensity</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>pa_norm from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>Normalized precipitation area from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>pa_norm</Variable>
+    <Abstract>Normalized precipitation area</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>r95_norm from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>r95_norm from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>r95_norm</Variable>
+    <Abstract>r95_norm</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_hyint/hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</FilePath>
+    <Name>r95_threshold from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Name>
+    <Title>r95_threshold from hyint_ACCESS1-0_historical_r1i1p1_1990_2005_ALL.nc</Title>
+    <Variable>r95_threshold</Variable>
+    <Abstract>r95_threshold</Abstract>
+  </Layer>
+
+  
+
+
+
+</Configuration>

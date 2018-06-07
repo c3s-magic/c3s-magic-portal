@@ -1,63 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_BSC_Energy/dtr_indicator_JJA_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</FilePath>
+    <Name>index from dtr_indicator_JJA_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</Name>
+    <Title>index from dtr_indicator_JJA_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</Title>
+    <Variable>index</Variable>
+    <Abstract>index</Abstract>
+  </Layer>
+
   
-  <Legend name="anomaly_agreement" type="svg" file="/data/adaguc-datasets/legends/precip2_17lev.svg"/>
 
-  <Style name="tasmax-extreme-spell-1">
-    <Legend fixedclasses="true" tickinterval="5" >elevation</Legend>
-    <Min>0.0</Min>
-    <Max>60</Max>
-    <!--<Log>10</Log>-->
-    <RenderMethod>bilinear,nearest</RenderMethod>
-  </Style>
 
-  <Style name="tasmax-extreme-spell-2">
-    <Legend fixedclasses="true" tickinterval="5" >anomaly_agreement</Legend>
-    <Min>0.0</Min>
-    <Max>60</Max>
-    <!--<Log>10</Log>-->
-    <RenderMethod>bilinear,nearest</RenderMethod>
-  </Style>
-
-  <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_BSC_Energy/tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</FilePath>
-    <Name>tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</Name>
-    <Title>Tasmax - Extreme spell duration - IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01</Title>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_BSC_Energy/tasmin_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</FilePath>
+    <Name>index from tasmin_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Name>
+    <Title>index from tasmin_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Title>
     <Variable>index</Variable>
-    <Styles>tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles>
-  </Layer>
+    <Abstract>index</Abstract>
+  <Styles>tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles></Layer>
+
   
-  
-  <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_BSC_Energy/tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</FilePath>
-    <Name>tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</Name>
-    <Title>Tasmax - Extreme spell duration - IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01</Title>
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_BSC_Energy/dtr_indicator_JJA_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</FilePath>
+    <Name>index from dtr_indicator_JJA_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</Name>
+    <Title>index from dtr_indicator_JJA_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</Title>
     <Variable>index</Variable>
-    <Styles>tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles>
-  </Layer>
- 
-  <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_BSC_Energy/tasmin_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</FilePath>
-    <Name>tasmin_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2060-12-01.nc</Name>
-    <Title>Tasmin - Extreme spell duration - IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01</Title>
-    <Variable>index</Variable>
-    <Styles>tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles>
+    <Abstract>index</Abstract>
   </Layer>
 
- <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_BSC_Energy/dtr_indicator_JJA_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</FilePath>
-    <Name>dtr_indicator_JJA_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</Name>
-    <Title>Diurnal temperature range- JJA_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01</Title>
-    <Variable>index</Variable>
-    <Styles>auto,tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles>
-  </Layer>
-
-  <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_BSC_Energy/dtr_indicator_JJA_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</FilePath>
-    <Name>dtr_indicator_JJA_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</Name>
-    <Title>Diurnal temperature range- JJA_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01</Title>
-    <Variable>index</Variable>
-    <Styles>auto,tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles>
-  </Layer>
   
-</Configuration>  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_BSC_Energy/tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</FilePath>
+    <Name>index from tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</Name>
+    <Title>index from tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp26_2020-01-01_2040-12-01.nc</Title>
+    <Variable>index</Variable>
+    <Abstract>index</Abstract>
+  <Styles>tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_BSC_Energy/tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</FilePath>
+    <Name>index from tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</Name>
+    <Title>index from tasmax_extreme_spell_duration_IPSL-CM5A-LR_rcp85_2020-01-01_2040-12-01.nc</Title>
+    <Variable>index</Variable>
+    <Abstract>index</Abstract>
+  <Styles>tasmax-extreme-spell-1,tasmax-extreme-spell-2</Styles></Layer>
+
+  
+
+
+
+</Configuration>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_ISAC_teleconnection/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>Patterns from EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</Name>
+    <Title>EOFs Loading Pattern from EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</Title>
+    <Variable>Patterns</Variable>
+    <Abstract>EOFs Loading Pattern</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_ISAC_teleconnection/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>PCs from EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</Name>
+    <Title>PCs timeseries from EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</Title>
+    <Variable>PCs</Variable>
+    <Abstract>PCs timeseries</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_ISAC_teleconnection/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
+    <Name>Regressions from EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</Name>
+    <Title>EOFs Linear Regressions from EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</Title>
+    <Variable>Regressions</Variable>
+    <Abstract>EOFs Linear Regressions</Abstract>
+  </Layer>
+
+  
+
+
+
+</Configuration>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_zmnam/monthly_pc.nc</FilePath>
+    <Name>PC_mo from monthly_pc.nc</Name>
+    <Title>Monthly zonal mean annular mode PC from monthly_pc.nc</Title>
+    <Variable>PC_mo</Variable>
+    <Abstract>Monthly zonal mean annular mode PC</Abstract>
+  </Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_zmnam/eofs.nc</FilePath>
+    <Name>EOF from eofs.nc</Name>
+    <Title>Zonal mean annular mode EOF from eofs.nc</Title>
+    <Variable>EOF</Variable>
+    <Abstract>Zonal mean annular mode EOF</Abstract>
+  </Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_zmnam/daily_pc.nc</FilePath>
+    <Name>PC_da from daily_pc.nc</Name>
+    <Title>Daily zonal mean annular mode PC from daily_pc.nc</Title>
+    <Variable>PC_da</Variable>
+    <Abstract>Daily zonal mean annular mode PC</Abstract>
+  </Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_zmnam/test250.png</FilePath>
+    <Name>pngdata from test250.png</Name>
+    <Title>pngdata from test250.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_zmnam/test1000.png</FilePath>
+    <Name>pngdata from test1000.png</Name>
+    <Title>pngdata from test1000.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4-6_ISAC_zmnam/test50.png</FilePath>
+    <Name>pngdata from test50.png</Name>
+    <Title>pngdata from test50.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+
+</Configuration>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>corr from climexp_correlate_output.nc</Name>
+    <Title>correlation from climexp_correlate_output.nc</Title>
+    <Variable>corr</Variable>
+    <Abstract>correlation</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>prob from climexp_correlate_output.nc</Name>
+    <Title>p-value from climexp_correlate_output.nc</Title>
+    <Variable>prob</Variable>
+    <Abstract>p-value</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>regr1 from climexp_correlate_output.nc</Name>
+    <Title>regression of series Nino3 on field pre from climexp_correlate_output.nc</Title>
+    <Variable>regr1</Variable>
+    <Abstract>regression of series Nino3 on field pre</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>regr from climexp_correlate_output.nc</Name>
+    <Title>regression of field pre on series Nino3 from climexp_correlate_output.nc</Title>
+    <Variable>regr</Variable>
+    <Abstract>regression of field pre on series Nino3</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>dregr1 from climexp_correlate_output.nc</Name>
+    <Title>error on regression of series Nino3 on field pre from climexp_correlate_output.nc</Title>
+    <Variable>dregr1</Variable>
+    <Abstract>error on regression of series Nino3 on field pre</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>dregr from climexp_correlate_output.nc</Name>
+    <Title>error on regression of field pre on series Nino3 from climexp_correlate_output.nc</Title>
+    <Variable>dregr</Variable>
+    <Abstract>error on regression of field pre on series Nino3</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>n from climexp_correlate_output.nc</Name>
+    <Title>number of valid points from climexp_correlate_output.nc</Title>
+    <Variable>n</Variable>
+    <Abstract>number of valid points</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>relregr from climexp_correlate_output.nc</Name>
+    <Title>relative regression from climexp_correlate_output.nc</Title>
+    <Variable>relregr</Variable>
+    <Abstract>relative regression</Abstract>
+  </Layer>
+
+  
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_KNMI_Correlations/climexp_correlate_output.nc</FilePath>
+    <Name>drelregr from climexp_correlate_output.nc</Name>
+    <Title>error on relative regression from climexp_correlate_output.nc</Title>
+    <Variable>drelregr</Variable>
+    <Abstract>error on relative regression</Abstract>
+  </Layer>
+
+  
+
+
+
+</Configuration>

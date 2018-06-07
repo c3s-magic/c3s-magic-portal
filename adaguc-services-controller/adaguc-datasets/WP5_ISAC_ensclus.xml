@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration>
-  <!-- adaguc-server/bin/adagucserver - -getlayers - -file /data/adaguc-data/c3smagic/WP5_ISAC_ensclus/ens_anomalies_pr_5ens_JJA_Eu_hist.nc 
- -->
-  
-  <Layer type="database">
-    <FilePath>/data/adaguc-data/c3smagic/WP5_ISAC_ensclus/ens_anomalies_pr_5ens_JJA_Eu_hist.nc</FilePath>
-    <Name>ens_anomalies</Name>
-    <Title>ens_anomalies</Title>
-    <Variable>ens_anomalies</Variable>
-    <Abstract>ens_anomalies</Abstract>  
-    <Styles>auto</Styles>
-  </Layer>
-
-  
-  <Layer type="database">
-    <FilePath>/data/adaguc-data/c3smagic/WP5_ISAC_ensclus/ens_climatologies_pr_5ens_JJA_Eu_hist.nc</FilePath>
-    <Name>ens_climatologies</Name>
-    <Title>ens_climatologies</Title>
-    <Variable>ens_climatologies</Variable>
-    <Abstract>ens_climatologies</Abstract>
-    <Styles>auto</Styles>
-  </Layer>
-
-  <Layer type="database">
-    <FilePath>/data/adaguc-data/c3smagic/WP5_ISAC_ensclus/ens_extreme_pr_5ens_JJA_Eu_hist.nc</FilePath>
-    <Name>ens_extreme</Name>
-    <Title>ens_extreme</Title>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP5_ISAC_ensclus/ens_extreme_pr_5ens_JJA_Eu_hist.nc</FilePath>
+    <Name>ens_extreme from ens_extreme_pr_5ens_JJA_Eu_hist.nc</Name>
+    <Title>ens_extreme from ens_extreme_pr_5ens_JJA_Eu_hist.nc</Title>
     <Variable>ens_extreme</Variable>
     <Abstract>ens_extreme</Abstract>
-    <Styles>auto</Styles>
   </Layer>
 
   
 
-</Configuration>  
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP5_ISAC_ensclus/ens_climatologies_pr_5ens_JJA_Eu_hist.nc</FilePath>
+    <Name>ens_climatologies from ens_climatologies_pr_5ens_JJA_Eu_hist.nc</Name>
+    <Title>ens_climatologies from ens_climatologies_pr_5ens_JJA_Eu_hist.nc</Title>
+    <Variable>ens_climatologies</Variable>
+    <Abstract>ens_climatologies</Abstract>
+  </Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP5_ISAC_ensclus/ens_anomalies_pr_5ens_JJA_Eu_hist.nc</FilePath>
+    <Name>ens_anomalies from ens_anomalies_pr_5ens_JJA_Eu_hist.nc</Name>
+    <Title>ens_anomalies from ens_anomalies_pr_5ens_JJA_Eu_hist.nc</Title>
+    <Variable>ens_anomalies</Variable>
+    <Abstract>ens_anomalies</Abstract>
+  </Layer>
+
+  
+
+
+
+</Configuration>

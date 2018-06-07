@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//BSC_thumbnails/extreme_spells_energy.png</FilePath>
+    <Name>pngdata from extreme_spells_energy.png</Name>
+    <Title>pngdata from extreme_spells_energy.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//BSC_thumbnails/diurnal_temperature_variation.png</FilePath>
+    <Name>pngdata from diurnal_temperature_variation.png</Name>
+    <Title>pngdata from diurnal_temperature_variation.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//BSC_thumbnails/insurance_risk_indices.png</FilePath>
+    <Name>pngdata from insurance_risk_indices.png</Name>
+    <Title>pngdata from insurance_risk_indices.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//BSC_thumbnails/single_and_multi_model_indices.png</FilePath>
+    <Name>pngdata from single_and_multi_model_indices.png</Name>
+    <Title>pngdata from single_and_multi_model_indices.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+
+</Configuration>

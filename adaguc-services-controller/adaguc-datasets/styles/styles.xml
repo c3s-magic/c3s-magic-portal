@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Legend name="anomaly_agreement" type="svg" file="/data/adaguc-datasets/legends/precip2_17lev.svg"/>
+
+  <Style name="tasmax-extreme-spell-1">
+    <Legend fixedclasses="true" tickinterval="5" >elevation</Legend>
+    <Min>0.0</Min>
+    <Max>60</Max>
+    <!--<Log>10</Log>-->
+    <RenderMethod>bilinear,nearest</RenderMethod>
+  </Style>
+
+  <Style name="tasmax-extreme-spell-2">
+    <Legend fixedclasses="true" tickinterval="5" >anomaly_agreement</Legend>
+    <Min>0.0</Min>
+    <Max>60</Max>
+    <!--<Log>10</Log>-->
+    <RenderMethod>bilinear,nearest</RenderMethod>
+  </Style>
+  
+    
+  <Legend name="anomaly_agreement" type="svg" file="/data/adaguc-datasets/legends/precip2_17lev.svg"/>
+
+  <Style name="anomaly_agreement">
+    <Legend fixedclasses="true" tickinterval="0.1" >anomaly_agreement</Legend>
+    <Min>0.0</Min>
+    <Max>1</Max>
+    <!--<Log>10</Log>-->
+    <RenderMethod>bilinear,nearest</RenderMethod>
+  </Style>
+
+</Configuration>  

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4_BSC_Modes of variability/era_interim_1990-01-2010-01_clusters.png</FilePath>
+    <Name>pngdata from era_interim_1990-01-2010-01_clusters.png</Name>
+    <Title>pngdata from era_interim_1990-01-2010-01_clusters.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4_BSC_Modes of variability/era_interim_1990-01-2010-01_clusters.nc</FilePath>
+    <Name>data from era_interim_1990-01-2010-01_clusters.nc</Name>
+    <Title>data from era_interim_1990-01-2010-01_clusters.nc</Title>
+    <Variable>data</Variable>
+    <Abstract>data</Abstract>
+  </Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4_BSC_Modes of variability/era_interim_1990-01-2010-01_clusters_pvalue.nc</FilePath>
+    <Name>data from era_interim_1990-01-2010-01_clusters_pvalue.nc</Name>
+    <Title>data from era_interim_1990-01-2010-01_clusters_pvalue.nc</Title>
+    <Variable>data</Variable>
+    <Abstract>data</Abstract>
+  </Layer>
+
+  
+
+
+
+</Configuration>
