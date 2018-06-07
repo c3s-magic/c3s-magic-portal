@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration>
   
-  <Layer type="database">
+ <!-- <Layer type="database">
     <FilePath filter="">/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/RegimesPattern_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
     <Variable>Regimes</Variable>
     <Styles>auto</Styles>
-  </Layer>
+  </Layer>-->
   
   <!-- adaguc-server/bin/adagucserver - -getlayers - -file /data/adaguc-data/c3smagic/WP4-6_ISAC_miles/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc -->
-  <Layer type="database">
+<!--  <Layer type="database">
     <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
     <Name>Patterns</Name>
     <Title>EOFs Loading Pattern</Title>
@@ -16,9 +16,9 @@
     <Abstract>EOFs Loading Pattern</Abstract>
     <Styles>auto</Styles>
 
-  </Layer>
+  </Layer>-->
 
-  <Layer type="database">
+ <!-- <Layer type="database">
     <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
     <Name>PCs</Name>
     <Title>PCs timeseries</Title>
@@ -26,8 +26,8 @@
     <Abstract>PCs timeseries</Abstract>
     <Styles>auto</Styles>
 
-  </Layer>
-
+  </Layer>-->
+<!--
   <Layer type="database">
     <FilePath >/data/adaguc-data/c3smagic/WP4-6_ISAC_miles/EOFs_MPI-ESM-P_r1_1950_2005_DJF.nc</FilePath>
     <Name>Regressions</Name>
@@ -35,7 +35,7 @@
     <Variable>Regressions</Variable>
     <Abstract>EOFs Linear Regressions</Abstract>
     <Styles>auto</Styles>
-  </Layer>
+  </Layer>-->
 
 
   

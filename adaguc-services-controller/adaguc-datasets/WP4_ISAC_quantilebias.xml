@@ -4,10 +4,12 @@
   
   <Layer type="database">
     <FilePath>/data/adaguc-data/c3smagic/WP4_ISAC_quantilebias/MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc</FilePath>
-    <Name>pr</Name>
+    <Name>qb</Name>
     <Title>Precipitation</Title>
-    <Variable>pr</Variable>
+    <Variable>qb</Variable>
     <Abstract>Precipitation</Abstract>
+    <Min>0</Min>
+    <Max>2</Max>
     <Styles>auto</Styles>
   </Layer>
 
