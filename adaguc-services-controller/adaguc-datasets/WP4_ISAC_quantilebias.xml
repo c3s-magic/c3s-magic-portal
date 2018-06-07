@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration>
-  <!-- adaguc-server/bin/adagucserver - -getlayers - -file /data/adaguc-data/c3smagic/WP4_ISAC_quantilebias/MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc -->
-  
-  <Layer type="database">
-    <FilePath>/data/adaguc-data/c3smagic/WP4_ISAC_quantilebias/MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc</FilePath>
-    <Name>qb</Name>
-    <Title>Precipitation</Title>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP4_ISAC_quantilebias/MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc</FilePath>
+    <Name>qb from MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc</Name>
+    <Title>Quantile bias from MPI-ESM-P_historical_r1i1p1_1979-2005_pr_75qb.nc</Title>
     <Variable>qb</Variable>
-    <Abstract>Precipitation</Abstract>
-    <Min>0</Min>
-    <Max>2</Max>
-    <Styles>auto</Styles>
-  </Layer>
+    <Abstract>Quantile bias</Abstract>
+  <Min>0</Min><Max>2</Max></Layer>
+
+  
 
 
-</Configuration>  
+
+</Configuration>

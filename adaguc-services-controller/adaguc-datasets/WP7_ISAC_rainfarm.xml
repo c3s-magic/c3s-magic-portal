@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Configuration>
-  
-  <Legend name="anomaly_agreement" type="svg" file="/data/adaguc-datasets/legends/precip2_17lev.svg"/>
-
-  <Style name="anomaly_agreement">
-    <Legend fixedclasses="true" tickinterval="0.1" >anomaly_agreement</Legend>
-    <Min>0.0</Min>
-    <Max>1</Max>
-    <!--<Log>10</Log>-->
-    <RenderMethod>bilinear,nearest</RenderMethod>
-  </Style>
-
-  <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_ISAC_rainfarm/rainfarm_output.nc</FilePath>
-    <Name>pr_rainfarm_output.nc</Name>
-    <Title>Precipitation flux rainfarm_output.nc</Title>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_ISAC_rainfarm/rainfarm_output.nc</FilePath>
+    <Name>pr from rainfarm_output.nc</Name>
+    <Title>Precipitation from rainfarm_output.nc</Title>
     <Variable>pr</Variable>
-    <Styles>anomaly_agreement</Styles>
-    
-    <DataPostProc algorithm="ax+b" a="3600" b="0" units="mm/h-1"/> <!-- kg/m-2/s-1 is mm/seconds, to mm/hour -->
-  </Layer>
-
-  <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/c3smagic/WP7_ISAC_rainfarm/rainfarm_weights_output.nc</FilePath>
-    <Name>pr_rainfarm_weights_output.nc</Name>
-    <Title>Precipitation weights</Title>
-    <Variable>pr</Variable>
-    <Styles>auto</Styles>
-    
-    <!-- kg/m-2/s-1 is mm/seconds, to mm/hour -->
-    <!--<DataPostProc algorithm="ax+b" a="3600" b="0" units="mm/h-1"/> -->
-  </Layer>
+    <Abstract>Precipitation</Abstract>
+  <Styles>anomaly_agreement</Styles><DataPostProc a="3600" algorithm="ax+b" b="0" units="mm/h-1" /></Layer>
 
   
-</Configuration>  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_ISAC_rainfarm/RainFARM_example_8x8.png</FilePath>
+    <Name>pngdata from RainFARM_example_8x8.png</Name>
+    <Title>pngdata from RainFARM_example_8x8.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_ISAC_rainfarm/rainfarm_weights_output.nc</FilePath>
+    <Name>pr from rainfarm_weights_output.nc</Name>
+    <Title>Precipitation from rainfarm_weights_output.nc</Title>
+    <Variable>pr</Variable>
+    <Abstract>Precipitation</Abstract>
+  </Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7_ISAC_rainfarm/RainFARM_example_64x64.png</FilePath>
+    <Name>pngdata from RainFARM_example_64x64.png</Name>
+    <Title>pngdata from RainFARM_example_64x64.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+
+</Configuration>

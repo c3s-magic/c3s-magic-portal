@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_BSC_COMBINATION_AND_AREA_AVERAGING/aci_IPSL-CM5A-LR_rcp85_2020-06-01_2060-06-01.nc</FilePath>
+    <Name>index from aci_IPSL-CM5A-LR_rcp85_2020-06-01_2060-06-01.nc</Name>
+    <Title>index from aci_IPSL-CM5A-LR_rcp85_2020-06-01_2060-06-01.nc</Title>
+    <Variable>index</Variable>
+    <Abstract>index</Abstract>
+  </Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP6_BSC_COMBINATION_AND_AREA_AVERAGING/aci_IPSL-CM5A-LR_rcp85_2020-06-01_2060-06-01__1cdd_1rx5day_2tx90p_0tx10p_1Wx.nc</FilePath>
+    <Name>index from aci_IPSL-CM5A-LR_rcp85_2020-06-01_2060-06-01__1cdd_1rx5day_2tx90p_0tx10p_1Wx.nc</Name>
+    <Title>index from aci_IPSL-CM5A-LR_rcp85_2020-06-01_2060-06-01__1cdd_1rx5day_2tx90p_0tx10p_1Wx.nc</Title>
+    <Variable>index</Variable>
+    <Abstract>index</Abstract>
+  </Layer>
+
+  
+
+
+
+</Configuration>

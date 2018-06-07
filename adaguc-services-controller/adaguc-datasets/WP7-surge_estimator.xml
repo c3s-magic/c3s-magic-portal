@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7-surge_estimator/surge_heights_EC-Earth_s01r14_20131201-20140131.nc</FilePath>
+    <Name>surge_height from surge_heights_EC-Earth_s01r14_20131201-20140131.nc</Name>
+    <Title>surge_height from surge_heights_EC-Earth_s01r14_20131201-20140131.nc</Title>
+    <Variable>surge_height</Variable>
+    <Abstract>surge_height</Abstract>
+  </Layer>
+
+  
+
+
+
+</Configuration>

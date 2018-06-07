@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+  <Include location="/data/adaguc-datasets/styles/styles.xml"/>
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7-drought_indicator/dryfreq.png</FilePath>
+    <Name>pngdata from dryfreq.png</Name>
+    <Title>pngdata from dryfreq.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7-drought_indicator/CMIP5_bcc-csm1-1-m_day_historical_r1i1p1_T2Ms_pr_1990-1999_dryfreq.nc</FilePath>
+    <Name>pr from CMIP5_bcc-csm1-1-m_day_historical_r1i1p1_T2Ms_pr_1990-1999_dryfreq.nc</Name>
+    <Title>Precipitation from CMIP5_bcc-csm1-1-m_day_historical_r1i1p1_T2Ms_pr_1990-1999_dryfreq.nc</Title>
+    <Variable>pr</Variable>
+    <Abstract>Precipitation</Abstract>
+  </Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7-drought_indicator/drymax.png</FilePath>
+    <Name>pngdata from drymax.png</Name>
+    <Title>pngdata from drymax.png</Title>
+    <Variable>pngdata</Variable>
+    <Abstract>pngdata</Abstract>
+  <RenderMethod>rgba</RenderMethod></Layer>
+
+  
+
+
+<Layer type="database">
+    <FilePath filter=".*\.nc$">/data/adaguc-data/c3smagic//WP7-drought_indicator/CMIP5_bcc-csm1-1-m_day_historical_r1i1p1_T2Ms_pr_1990-1999_drymax.nc</FilePath>
+    <Name>pr from CMIP5_bcc-csm1-1-m_day_historical_r1i1p1_T2Ms_pr_1990-1999_drymax.nc</Name>
+    <Title>Consecutive dry days is the greatest number of consecutive days per time period with daily precipitation amount below 1mm. from CMIP5_bcc-csm1-1-m_day_historical_r1i1p1_T2Ms_pr_1990-1999_drymax.nc</Title>
+    <Variable>pr</Variable>
+    <Abstract>Consecutive dry days is the greatest number of consecutive days per time period with daily precipitation amount below 1mm.</Abstract>
+  </Layer>
+
+  
+
+
+
+</Configuration>
