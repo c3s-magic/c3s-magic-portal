@@ -46,7 +46,7 @@ services:
           - "COMPUTE=https://portal.c3s-magic.eu:9000"
           - "VIEWER=http://portal.c3s-magic.eu:8080"
         ports:
-          - "80:3000"
+          - "3000:3000"
         volumes:
           - ./letsencrypt/.well-known:/frontend/c3s-magic-frontend/dist/.well-known
     adaguc-viewer:
@@ -56,6 +56,11 @@ services:
           - "8080:80"
         environment:
           - "ADAGUCSERVICES_AUTOWMS=https://portal.c3s-magic.eu:443/autowms?"
+    nginx:
+        build: nginx
+        ports:
+          - "80:80"
+
 
 # Add 127.0.1.1       portal.c3s-magic.eu to /etc/hosts    (portal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
 # Do docker-compose build --pull
