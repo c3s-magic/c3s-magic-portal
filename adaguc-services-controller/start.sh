@@ -177,4 +177,4 @@ then
 fi  
 
 echo "Starting TOMCAT Server" && \
-java -jar /adaguc/adaguc-services.war
+java -Dserver.ssl.enabled=false -jar /adaguc/adaguc-services.war

@@ -17,14 +17,13 @@
   <basedir>{ENV.ADAGUC_SERVICES_HOME}/data/adaguc-services-base</basedir>
 
   <server>
-    <port>9000</port>
+    <port>80</port>
   </server>
 
-  
+  <!--  
   <security>
     <truststorepassword>changeit</truststorepassword>
     <truststore>/security/truststore.ts</truststore>
-    <!--<trustrootscadirectory>{ENV.ADAGUC_SERVICES_HOME}/src/.globus/certificates/</trustrootscadirectory>-->
     <keystore>/security/keystore.jks</keystore>
     <keystorepassword>password</keystorepassword>
     <keystoretype>JKS</keystoretype>
@@ -34,7 +33,8 @@
       <caprivatekey>/security/adaguc-services-ca.key</caprivatekey>
       <remote-instances>
         <adaguc-service>{ENV.COMPUTE_NODE_1_URL}</adaguc-service>
-  
+
+--> 
         <!--
           ### Make sure that the remote instance (adaguc-service-compute) is trusted by adding its certificate to the controllers trust store ###
           
@@ -50,10 +50,12 @@
           cd magic-docker
           keytool -import -v -trustcacerts -alias controller-instance-001 -file ./adaguc-services-controller/adaguc-services-home/security/adaguc-services-ca.cert -keystore ./adaguc-services-compute/adaguc-services-home/security/truststore.ts -storepass changeit -noprompt
         -->
-
+<!--
       </remote-instances>
     </tokenapi>
   </security>
+
+  -->
 
   <adaguc-server>
     <adagucexecutable>/adaguc/adaguc-server-master//bin/adagucserver</adagucexecutable>

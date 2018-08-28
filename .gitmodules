@@ -1,0 +1,6 @@
+[submodule "nginx"]
+	path = nginx
+	url = https://github.com/c3s-magic/docker-term-letsencrypt.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/c3s-magic/c3s-magic-frontend.git

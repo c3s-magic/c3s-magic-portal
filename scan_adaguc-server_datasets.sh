@@ -1,3 +1,3 @@
 #!/bin/bash 
 
-docker exec controller.c3s-magic.eu  /adaguc/adaguc-server-updatedatasets.sh
+docker exec c3s-magic-portal_backend_1 /adaguc/adaguc-server-updatedatasets.sh
