@@ -1,19 +1,19 @@
-version: '2'
+version: '3'
 
 services:
     backend:
-        build: adaguc-services-controller
+        build: backend
         #        ports: 
         #    - "9001:9000"
         volumes:
-            - ./adaguc-services-controller/config:/config
-            - ./adaguc-services-controller/adagucdb:/adaguc/adagucdb
-            - ./adaguc-services-controller/logs:/var/log/adaguc
-            - ./adaguc-services-controller/adaguc-datasets:/data/adaguc-datasets
+            - ./backend/config:/config
+            - ./backend/adagucdb:/adaguc/adagucdb
+            - ./backend/logs:/var/log/adaguc
+            - ./backend/adaguc-datasets:/data/adaguc-datasets
             - "${STATIC_DATA_LOCATION}:/data/adaguc-data"
             - "${STATIC_DATA_LOCATION}:/data/adaguc-autowms"
-            - ./adaguc-services-controller/adaguc-services-controller-home/:/data/adaguc-services-home/
-            - ./adaguc-services-controller/security:/security
+            - ./backend/adaguc-services-controller-home/:/data/adaguc-services-home/
+            - ./backend/security:/security
         environment:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
             - "COMPUTE_NODE_1_URL=http:/compute:9000"
@@ -22,20 +22,22 @@ services:
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"
         depends_on:
             - compute
+        restart: unless-stopped
     compute:
-        build: adaguc-services-compute
+        build: compute
         #ports: 
         #    - "9000:9000"
         volumes:
-            - ./adaguc-services-compute/processes:/src/pywps/pywps/processes/
-            - ./adaguc-services-compute/config:/config
+            - ./compute/processes:/src/pywps/pywps/processes/
+            - ./compute/config:/config
             - /data/adaguc-services-compute-home/:/data/adaguc-services-home/
             - /data/climexp:/data/climexp
             - /data/esmvaltool:/data/esmvaltool
             - /data/esmvaltool_output:/data/esmvaltool_output
-            - ./adaguc-services-compute/security:/security
+            - ./compute/security:/security
         environment:
             - "EXTERNALADDRESS=http://compute:9000"
+        restart: unless-stopped
     frontend:
         build: frontend
         environment: 
@@ -53,6 +55,7 @@ services:
           - adaguc-viewer
           - backend
           - compute
+        restart: unless-stopped
     adaguc-viewer:
         image: openearth/adaguc-viewer
         #ports:
@@ -74,8 +77,4 @@ services:
           - compute
           - frontend
           - adaguc-viewer
-
-# Add 127.0.1.1       portal.c3s-magic.eu to /etc/hosts    (portal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
-# Do docker-compose build --pull
-# Do docker-compose up in working directory and go to localhost:80
-# Do docker-compose down to stop all
+        restart: unless-stopped

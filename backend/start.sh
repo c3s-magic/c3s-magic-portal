@@ -176,5 +176,8 @@ then
   exit 1
 fi  
 
+#scan user folder for datasets
+sh /adaguc/adaguc-server-updatedatasets.sh
+
 echo "Starting TOMCAT Server" && \
 java -Dserver.ssl.enabled=false -jar /adaguc/adaguc-services.war
