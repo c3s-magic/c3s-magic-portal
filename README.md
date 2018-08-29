@@ -1,3 +1,10 @@
+## How to add a Metric
+
+1. Add recipe to ESMValTool
+2. Fille in yaml settings file
+3. Find out interactive plots options...
+4. Profit!
+
 
 ## Deploying using docker-compose
 
