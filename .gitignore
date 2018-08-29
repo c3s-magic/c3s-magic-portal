@@ -7,3 +7,5 @@ adaguc-services-controller/adaguc-services-controller-home/data/
 adaguc-services-controller/security/
 adaguc-services-compute/security/
 .env
+cert
+letsencrypt
