@@ -5,8 +5,8 @@ backend/adaguc-services-controller-home/adaguc-services-tmp
 backend/adaguc-services-controller-home/data/
 backend/adagucdb/*
 *.pyc
-adaguc-services-controller/security/
-adaguc-services-compute/security/
+backend/security/
+compute/security/
 .env
 cert
 letsencrypt
