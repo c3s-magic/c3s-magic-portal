@@ -1,4 +1,5 @@
 #/bin/bash
 
-mkdir ./adaguc-services-controller/adagucdb/
-mkdir ./adaguc-services-controller/logs
+#these folders should already be in the repo, but just in case....
+mkdir ./backend/adagucdb/
+mkdir ./backend/logs
