@@ -3,7 +3,7 @@ version: '3'
 services:
     backend:
         build: backend
-        #        ports: 
+        #        ports:
         #    - "9001:9000"
         volumes:
             - ./backend/config:/config
@@ -16,8 +16,8 @@ services:
             - ./backend/security:/security
         environment:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
-            - "COMPUTE_NODE_1_URL=http:/compute:9000"
-            #  New application can be created at https://console.developers.google.com/apis/credentials 
+            - "COMPUTE_NODE_1_URL=https://compute:9000"
+            #  New application can be created at https://console.developers.google.com/apis/credentials
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"
         depends_on:
@@ -25,7 +25,7 @@ services:
         restart: unless-stopped
     compute:
         build: compute
-        #ports: 
+        #ports:
         #    - "9000:9000"
         volumes:
             - ./compute/processes:/src/pywps/pywps/processes/
@@ -36,11 +36,11 @@ services:
             - /data/esmvaltool_output:/data/esmvaltool_output
             - ./compute/security:/security
         environment:
-            - "EXTERNALADDRESS=http://compute:9000"
+            - "EXTERNALADDRESS=https://compute:9000"
         restart: unless-stopped
     frontend:
         build: frontend
-        environment: 
+        environment:
           - "BACKEND=https://${EXTERNAL_HOSTNAME}/backend"
           - "COMPUTE=https://compute:9000"
           - "VIEWER=https://${EXTERNAL_HOSTNAME}/adaguc-viewer"
