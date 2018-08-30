@@ -41,9 +41,5 @@ keytool -import -v -trustcacerts -alias adagucservicescert -file adaguc-services
 
 HOME=$ADAGUC_SERVICES_HOME
 
-echo "Activating conda env"
-source activate esmvalcondaenv
-
-
 echo "Starting TOMCAT Server" && \
 java -jar /src/adaguc-services.war

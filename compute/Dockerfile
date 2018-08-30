@@ -12,7 +12,15 @@ EXPOSE 9000
 
 RUN yum update -y && yum install -y \
     epel-release \
-    ImageMagick
+    netcdf-fortran-devel.x86_64\
+    lapack-devel.x86_64 R\
+    python-py\
+    scipy\
+    numpy\
+    python-pandas\
+    netcdf4-python\
+    tomcat \
+    openssl
 
 RUN yum clean all && yum groupinstall -y "Development tools"
 
@@ -26,49 +34,18 @@ RUN curl -L -O https://github.com/geopython/pywps/archive/pywps-3.2.5.tar.gz
 RUN tar xvf pywps-3.2.5.tar.gz
 RUN mv pywps-pywps-3.2.5 pywps
 
-
-##### Install processes and tools ####
-
-
-# install conda
-WORKDIR /src
-RUN curl -L -O https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
-RUN bash ./Miniconda2-latest-Linux-x86_64.sh -p /miniconda -b
-ENV PATH=/miniconda/bin:${PATH}
-RUN conda update -y conda
-RUN conda update -y pip
-
-# get esmvaltool
-#WORKDIR /src
-#RUN git clone https://github.com/ESMValGroup/ESMValTool
-#WORKDIR /src/ESMValTool
-##RUN git checkout version2_knmi_sprint
-#RUN git checkout REFACTORING_backend
-
-# install esmvaltool
-#COPY esmvaltoolenvironment.yml /src/
-#RUN conda env update --name esmvalcondaenv --file /src/esmvaltoolenvironment.yml
-#RUN source activate esmvalcondaenv
-# workaround: ncl install from conda is broken, see https://github.com/conda-forge/ncl-feedstock/issues/25
-#RUN conda install -y -c conda-forge poppler=0.52.0 xerces-c=3.1.4
-#RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
-
-RUN yum update -y && yum install -y \
-    tomcat \
-    openssl
-    
 # Setup directories
 WORKDIR /data/adaguc-services-home/
-
 
 ### CLIMATE EXPLORER section ###
 
 RUN yum update -y && yum install -y \
-  netcdf-fortran-devel.x86_64 \
-   lapack-devel.x86_64 R
+    netcdf-fortran-devel.x86_64 \
+    lapack-devel.x86_64 \
+    R
 
 WORKDIR /src
-RUN git clone https://github.com/andrejsim/ClimExp-fortran.git 
+RUN git clone https://github.com/andrejsim/ClimExp-fortran.git
 RUN mkdir -p ClimExp-fortran/build
 # moved this library temporarily to git hub, can not locate relevant source online. (Pending)
 RUN git clone https://github.com/andrejsim/nrf
@@ -82,19 +59,16 @@ ENV CLIMEXPFORTRAN=/src/ClimExp-fortran/build/
 WORKDIR /src
 RUN git clone https://github.com/KNMI/wps_prov
 WORKDIR /src/wps_prov
-#RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
+RUN python setup.py install
 
 VOLUME /src/pywps/pywps/processes/
 WORKDIR /src
 RUN git clone https://github.com/maartenplieger/ClimExp-pyapi
 
 WORKDIR /src/ClimExp-pyapi
-#RUN [ "/bin/bash", "-c", "source activate esmvalcondaenv && python setup.py install" ]
-
+RUN python setup.py install
 
 ENV PYTHONPATH="/src/ClimExp-pyapi/wpsproc/prov:/src/wps_prov"
-
-
 
 ############### End of custom processes ###################
 
@@ -114,4 +88,3 @@ ENTRYPOINT /src/start.sh
 #docker exec -it  `docker ps -f ancestor=adaguc-services-compute -q` bash
 
 # PyWPS log: /data/adaguc-services-home/adaguc-services-tmp/pywps.log
-
