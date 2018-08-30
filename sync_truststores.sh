@@ -2,8 +2,8 @@
 
 # This script ensures that the controller and the compute instance are able to communicate with each other.
 
-SECURITY_COMPUTE=adaguc-services-compute/security
-SECURITY_CONTROLLER=adaguc-services-controller/security
+SECURITY_COMPUTE=compute/security
+SECURITY_CONTROLLER=backend/security
 
 # 1) Export certificate from remote keystore to a file called adaguc-compute-001.pem:
 keytool -export -alias tomcat -rfc -file adaguc-compute-001.pem -keystore ${SECURITY_COMPUTE}/keystore.jks -storepass password
