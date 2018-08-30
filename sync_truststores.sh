@@ -12,8 +12,11 @@ keytool -export -alias tomcat -rfc -file adaguc-compute-001.pem -keystore ${SECU
 keytool -delete -alias adaguc-compute-001 -keystore ${SECURITY_CONTROLLER}/truststore.ts -storepass changeit -noprompt
 keytool -import -v -trustcacerts -alias adaguc-compute-001 -file adaguc-compute-001.pem -keystore ${SECURITY_CONTROLLER}/truststore.ts -storepass changeit -noprompt
 
+rm adaguc-compute-001.pem
+
 # 3) Export CA of this instance into truststore of remote instance
 keytool -delete -alias controller-instance-001 -keystore ${SECURITY_COMPUTE}/truststore.ts -storepass changeit -noprompt
 keytool -import -v -trustcacerts -alias controller-instance-001 -file ${SECURITY_CONTROLLER}/adaguc-services-ca.cert -keystore ${SECURITY_COMPUTE}/truststore.ts -storepass changeit -noprompt
+
       
 #Restart both dockers      
