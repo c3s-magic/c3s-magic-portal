@@ -1,8 +1,9 @@
-adaguc-services-compute/adaguc-services-compute-home/data/*
-adaguc-services-compute/adaguc-services-compute-home/adaguc-services-tmp/*
-adaguc-services-compute/adaguc-services-compute-home/wpsoutputs/*
-adaguc-services-controller/adaguc-services-controller-home/adaguc-services-tmp
-adaguc-services-controller/adaguc-services-controller-home/data/
+compute/adaguc-services-compute-home/data/*
+compute/adaguc-services-compute-home/adaguc-services-tmp/*
+compute/adaguc-services-compute-home/wpsoutputs/*
+backend/adaguc-services-controller-home/adaguc-services-tmp
+backend/adaguc-services-controller-home/data/
+backend/adagucdb/*
 *.pyc
 adaguc-services-controller/security/
 adaguc-services-compute/security/
