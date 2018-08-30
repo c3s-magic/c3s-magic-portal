@@ -3,6 +3,7 @@ compute/adaguc-services-compute-home/adaguc-services-tmp/*
 compute/adaguc-services-compute-home/wpsoutputs/*
 backend/adaguc-services-controller-home/adaguc-services-tmp
 backend/adaguc-services-controller-home/data/
+backend/adaguc-services-controller-home/
 backend/adagucdb/*
 *.pyc
 backend/security/
