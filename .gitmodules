@@ -4,3 +4,6 @@
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/c3s-magic/c3s-magic-frontend.git
+[submodule "copernicus-wps"]
+	path = copernicus-wps
+	url = https://github.com/c3s-magic/copernicus-wps-demo.git

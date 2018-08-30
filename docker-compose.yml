@@ -62,6 +62,8 @@ services:
         #  - "8080:80"
         environment:
           - "ADAGUCSERVICES_AUTOWMS=https://${EXTERNAL_HOSTNAME}/backend/autowms?"
+    copernicus-wps:
+        build: copernicus-wps
     nginx:
         build: nginx
         ports:
