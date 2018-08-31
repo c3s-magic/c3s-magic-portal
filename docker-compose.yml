@@ -23,6 +23,8 @@ services:
         depends_on:
             - compute
         restart: unless-stopped
+        links:
+            - "nginx:${EXTERNAL_HOSTNAME}"
     compute:
         build: compute
         #ports:
@@ -76,9 +78,5 @@ services:
         volumes:
           - ./letsencrypt:/etc/letsencrypt
           - ./cert:/cert
-        depends_on:
-          - backend
-          - compute
-          - frontend
-          - adaguc-viewer
+          - ./backend/security:/backend-security/
         restart: unless-stopped
