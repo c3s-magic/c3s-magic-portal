@@ -16,13 +16,15 @@ services:
             - ./backend/security:/security
         environment:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
-            - "COMPUTE_NODE_1_URL=https://compute:9000"
+            - "COMPUTE_NODE_1_URL=https://compute:9000/wps?"
             #  New application can be created at https://console.developers.google.com/apis/credentials
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"
         depends_on:
             - compute
         restart: unless-stopped
+        links:
+            - "nginx:${EXTERNAL_HOSTNAME}"
     compute:
         build: compute
         #ports:
@@ -36,7 +38,7 @@ services:
             - /data/esmvaltool_output:/data/esmvaltool_output
             - ./compute/security:/security
         environment:
-            - "EXTERNALADDRESS=https://compute:9000"
+            - "EXTERNALADDRESS=https://compute:9000/"
         restart: unless-stopped
     frontend:
         build: frontend
@@ -76,9 +78,5 @@ services:
         volumes:
           - ./letsencrypt:/etc/letsencrypt
           - ./cert:/cert
-        depends_on:
-          - backend
-          - compute
-          - frontend
-          - adaguc-viewer
+          - ./backend/security:/backend-security/
         restart: unless-stopped

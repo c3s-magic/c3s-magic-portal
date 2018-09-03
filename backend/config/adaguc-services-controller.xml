@@ -22,6 +22,7 @@
 
 
   <security>
+    <userheader>x-ssl_client_s_dn</userheader>
     <truststorepassword>changeit</truststorepassword>
     <truststore>/security/truststore.ts</truststore>
     <keystore>/security/keystore.jks</keystore>
@@ -32,7 +33,7 @@
       <cacertificate>/security/adaguc-services-ca.cert</cacertificate>
       <caprivatekey>/security/adaguc-services-ca.key</caprivatekey>
       <remote-instances>
-        <adaguc-service>{ENV.COMPUTE_NODE_1_URL}</adaguc-service>
+        <adaguc-service name="calculator">{ENV.COMPUTE_NODE_1_URL}</adaguc-service>
 
         <!--
           ### Make sure that the remote instance (adaguc-service-compute) is trusted by adding its certificate to the controllers trust store ###
@@ -82,4 +83,10 @@
     <autowmspath>/data/adaguc-autowms/</autowmspath>
     <datasetpath>/data/adaguc-datasets/</datasetpath>
   </autowms>
+  <basket>
+    <enabled>true</enabled>
+  </basket>
+  <esgfsearch>
+    <searchurl>https://esg-dn1.nsc.liu.se/esg-search/search?</searchurl>
+  </esgfsearch>
 </adaguc-services>
