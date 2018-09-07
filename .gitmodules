@@ -7,3 +7,6 @@
 [submodule "copernicus-wps"]
 	path = copernicus-wps
 	url = https://github.com/c3s-magic/copernicus-wps-demo.git
+[submodule "esgfbrowser"]
+	path = esgfbrowser
+	url = git@github.com:c3s-magic/esgfbrowser.git
