@@ -87,6 +87,9 @@
     <enabled>true</enabled>
   </basket>
   <esgfsearch>
-    <searchurl>https://esg-dn1.nsc.liu.se/esg-search/search?</searchurl>
+    <enabled>true</enabled>
+    <cachelocation>/tmp/esgfsearch</cachelocation>
+    <!--<searchurl>https://esg-dn1.nsc.liu.se/esg-search/search?</searchurl>-->
+    <searchurl>https://cp4cds-index1.ceda.ac.uk/esg-search/search?</searchurl>
   </esgfsearch>
 </adaguc-services>

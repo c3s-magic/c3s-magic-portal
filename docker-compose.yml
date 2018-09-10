@@ -68,6 +68,17 @@ services:
         build: copernicus-wps
         ports:
           - "5000:5000"
+    esgfsearch:
+        build: esgfbrowser
+        environment:
+          - "searchservice=https://${EXTERNAL_HOSTNAME}/backend/esgfsearch/search?"
+          - "catalogbrowserservice=https://${EXTERNAL_HOSTNAME}/backend/esgfsearch/catalog?"
+          - "adagucservice=https://${EXTERNAL_HOSTNAME}/backend/adagucserver?"
+          - "getvariables=https://${EXTERNAL_HOSTNAME}/backend/esgfsearch/getvariables?"
+          - "xml2jsonservice=https://${EXTERNAL_HOSTNAME}/backend/xml2json?"
+          - "adagucviewer=https://${EXTERNAL_HOSTNAME}/adaguc-viewer"
+        ports:
+          - "10080:80"   
     nginx:
         build: nginx
         ports:
