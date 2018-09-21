@@ -68,6 +68,9 @@ services:
         build: copernicus-wps
         ports:
           - "5000:5000"
+        volumes:
+            - "${ESMVALTOOL_CMIP5}:/cmip5"
+            - "${ESMVALTOOL_OBS}:/obs"
     esgfsearch:
         build: esgfbrowser
         environment:
