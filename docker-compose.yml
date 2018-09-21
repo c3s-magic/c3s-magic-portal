@@ -17,6 +17,7 @@ services:
         environment:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
             - "COMPUTE_NODE_1_URL=https://compute:9000/wps?"
+            - "COMPUTE_NODE_2_URL=http://copernicus-wps:5000/"
             #  New application can be created at https://console.developers.google.com/apis/credentials
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"
@@ -66,8 +67,9 @@ services:
           - "ADAGUCSERVICES_AUTOWMS=https://${EXTERNAL_HOSTNAME}/backend/autowms?"
     copernicus-wps:
         build: copernicus-wps
-        ports:
-          - "5000:5000"
+#	debug wps by exposing this port over http
+#        ports:
+#          - "5000:5000"
         volumes:
             - "${ESMVALTOOL_CMIP5}:/cmip5"
             - "${ESMVALTOOL_OBS}:/obs"
