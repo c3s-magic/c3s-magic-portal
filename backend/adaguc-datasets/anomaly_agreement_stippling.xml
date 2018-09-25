@@ -30,24 +30,32 @@
 
   <Style name="anomaly_agreement">
     <Legend fixedclasses="true" tickround=".1">anomaly_agreement</Legend>
-    <Min>-1</Min>
-    <Max>1</Max>
+    <Min>0</Min>
+    <Max>3</Max>
     <RenderMethod>nearest,bilinear</RenderMethod>
   </Style>
 
   
+  <Style name="percentage">
+    <Legend fixedclasses="true" tickround=".1">anomaly_agreement</Legend>
+    <Min>0</Min>
+    <Max>100</Max>
+    <RenderMethod>nearest,bilinear</RenderMethod>
+  </Style>
+  
   <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/anomaly_agreement.nc</FilePath>
+    <FilePath filter="">/data/adaguc-data/anomaly_agreement/tas_Jun-Aug_multimodel-anomaly_MIROC5_MPI-ESM-MR_bcc-csm1-1_2006_2099_1961_1990_lonlat.nc</FilePath>
     <Name>anomaly</Name>
-    <Variable>anomaly</Variable>
-    <Styles>anomaly_agreement</Styles>
+    <Variable>tas</Variable>
+    <Styles>anomaly_agreement,auto</Styles>
   </Layer>
   
   <Layer type="database">
-    <FilePath filter="">/data/adaguc-data/anomaly_agreement.nc</FilePath>
+    <!-- ncpdq -a lat,lon tas_Jun-Aug_multimodel-anomaly_MIROC5_MPI-ESM-MR_bcc-csm1-1_2006_2099_1961_1990.nc tas_Jun-Aug_multimodel-anomaly_MIROC5_MPI-ESM-MR_bcc-csm1-1_2006_2099_1961_1990_lonlat.nc -->
+    <FilePath filter="">/data/adaguc-data/anomaly_agreement/tas_Jun-Aug_multimodel-anomaly_MIROC5_MPI-ESM-MR_bcc-csm1-1_2006_2099_1961_1990_lonlat.nc</FilePath>
     <Name>anomaly_agreement</Name>
-    <Variable>anomaly_agreement</Variable>
-    <Styles>stipplingthreshold,stipplingthresholdhatched</Styles>
+    <Variable>agreement</Variable>
+    <Styles>stipplingthreshold,stipplingthresholdhatched,percentage</Styles>
   </Layer>
   
 </Configuration>  
