@@ -17,7 +17,7 @@ services:
         environment:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
             - "COMPUTE_NODE_1_URL=https://compute:9000/wps?"
-            - "COMPUTE_NODE_2_URL=http://copernicus-wps:5000/"
+            - "COMPUTE_NODE_2_URL=https://${EXTERNAL_HOSTNAME}/copernicus-wps/?"
             #  New application can be created at https://console.developers.google.com/apis/credentials
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"

@@ -24,7 +24,7 @@
   <security>
     <userheader>x-ssl_client_s_dn</userheader>
     <truststorepassword>changeit</truststorepassword>
-    <truststore>/security/truststore.ts</truststore>
+    <!--<truststore>/security/truststore.ts</truststore> security not needed for copernicus wps, its messing things up -->
     <keystore>/security/keystore.jks</keystore>
     <keystorepassword>password</keystorepassword>
     <keystoretype>JKS</keystoretype>
