@@ -66,6 +66,17 @@
 
 
   <oauth2>
+     <provider name="ceda">    
+      <authloc>https://slcs.ceda.ac.uk/oauth/authorize</authloc>
+      <tokenloc>https://slcs.ceda.ac.uk/oauth/access_token</tokenloc>
+      <clientid>{ENV.CEDA_OAUTHCLIENTID}</clientid>
+      <clientsecret>{ENV.CEDA_OAUTHCLIENTSECRET}</clientsecret>
+      <description>Sign in with CEDA (beta)</description>
+      <registerlink>https://services.ceda.ac.uk/cedasite/register/info/</registerlink>
+      <logo>/impactportal/images/this_is_NOT_the_BADC_logo.jpg</logo>
+      <scope>https://slcs.ceda.ac.uk/oauth/certificate/</scope>     
+      <oauthcallbackurl>https://portal.c3s-magic.eu/oauth</oauthcallbackurl>
+    </provider>      
     <provider name="google">
       <!--
       New application can be created at https://console.developers.google.com/apis/credentials -->
