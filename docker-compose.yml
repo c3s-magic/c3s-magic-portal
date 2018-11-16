@@ -96,5 +96,6 @@ services:
         volumes:
           - ./letsencrypt:/etc/letsencrypt
           - ./cert:/cert
+          - ./ca-cert:/ca-cert
           - ./backend/security:/backend-security/
         restart: unless-stopped
