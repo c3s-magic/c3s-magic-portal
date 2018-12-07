@@ -98,4 +98,5 @@ services:
           - ./cert:/cert
           - ./ca-cert:/ca-cert
           - ./backend/security:/backend-security/
+          - ${PUBLIC_DATA}:/publicdata
         restart: unless-stopped
