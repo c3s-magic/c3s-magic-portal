@@ -67,6 +67,7 @@ services:
         #  - "8080:80"
         environment:
           - "ADAGUCSERVICES_AUTOWMS=https://${EXTERNAL_HOSTNAME}/backend/autowms?"
+        restart: unless-stopped
     copernicus-wps:
         build: copernicus-wps
 #	debug wps by exposing this port over http
@@ -75,6 +76,7 @@ services:
         volumes:
             - "${ESMVALTOOL_CMIP5}:/cmip5"
             - "${ESMVALTOOL_OBS}:/obs"
+        restart: unless-stopped
     esgfsearch:
         build: esgfbrowser
         environment:
@@ -86,6 +88,7 @@ services:
           - "adagucviewer=https://${EXTERNAL_HOSTNAME}/adaguc-viewer"
         ports:
           - "10080:80"   
+        restart: unless-stopped
     nginx:
         build: nginx
         ports:

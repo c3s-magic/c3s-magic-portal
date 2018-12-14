@@ -102,7 +102,8 @@
     <enabled>true</enabled>
     <cachelocation>/tmp/esgfsearch</cachelocation>
     <!--<searchurl>https://esg-dn1.nsc.liu.se/esg-search/search?</searchurl>-->
-    <searchurl>https://cp4cds-index1.ceda.ac.uk/esg-search/search?</searchurl>
+    <!--<searchurl>https://cp4cds-index1.ceda.ac.uk/esg-search/search?</searchurl>-->
+    <searchurl>https://index.mips.copernicus-climate.eu/esg-search/search?</searchurl>
   </esgfsearch>
   <joblist>
     <enabled>true</enabled>
