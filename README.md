@@ -1,18 +1,17 @@
-## How to add a Metric
+# C3S-Magic Portal
 
-1. Add recipe to ESMValTool
-2. Fille in yaml settings file
-3. Find out interactive plots options...
-4. Profit!
+This is the main repo of the C3S-Magic Portal software stack. It consists of a number of services, which together make up the Magic portal.
+
+The documentation for this portal (including an installation guide) can be found on readthedocs, at https://c3s-magic.readthedocs.io/en/latest/
+
+This portal can be deployed with Docker. A docker compose file is present to start and orchestrate all the services needed. A .env file is used for settings, see the example file included.
 
 
-## Deploying using docker-compose
-
- Add 127.0.1.1       portal.c3s-magic.eu to /etc/hosts    (portal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
- Do docker-compose build --pull
- Do docker-compose up in working directory and go to localhost:80
- Do docker-compose down to stop all
+Quick reminder: if you add static datasets to the server, be sure to tell adaguc about it:
+```
 
 #!/bin/bash 
 
 docker exec c3s-magic-portal_backend_1 /adaguc/adaguc-server-updatedatasets.sh
+
+```

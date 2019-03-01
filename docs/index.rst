@@ -7,14 +7,15 @@ Welcome to C3S Magic's documentation!
 =====================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
-   system_link
+   introduction
+   installation
+   user_guide
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
