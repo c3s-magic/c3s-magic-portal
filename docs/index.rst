@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-C3S Magic Portal
-================
+C3S Magic
+=========
 
 The Metrics and Access to Global Indices for Climate Projections (MAGIC) portal provides a quick and easy assessment of climate projections using well-established performance metrics. It allows the user to configure these criteria, apply them on selected CMIP5 model output and visualize results in the browser or download them onto your local machine.
 
