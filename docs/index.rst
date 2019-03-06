@@ -26,6 +26,7 @@ This documentation serves as an installation guide, overview of all services, an
    installation
    user_guide
    metrics
+   system-overview
 
 Indices and tables
 ==================
