@@ -29,6 +29,12 @@ services:
         restart: unless-stopped
         links:
             - "nginx:${EXTERNAL_HOSTNAME}"
+    climexp_numerical_wps:
+        build: climexp_numerical_wps
+        hostname: climexp_numerical_wps
+        volumes:
+            - /data/climexp:/data
+        restart: unless-stopped
     compute:
         build: compute
         #ports:

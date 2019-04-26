@@ -10,3 +10,6 @@
 [submodule "esgfbrowser"]
 	path = esgfbrowser
 	url = https://github.com/c3s-magic/esgfbrowser.git
+[submodule "climexp_numerical_wps"]
+	path = climexp_numerical_wps
+	url = https://github.com/c3s-magic/climexp_numerical_wps
