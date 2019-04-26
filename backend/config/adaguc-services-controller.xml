@@ -33,8 +33,9 @@
       <cacertificate>/security/adaguc-services-ca.cert</cacertificate>
       <caprivatekey>/security/adaguc-services-ca.key</caprivatekey>
       <remote-instances>
-        <adaguc-service name="calculator">{ENV.COMPUTE_NODE_1_URL}</adaguc-service>
+        <!--<adaguc-service name="calculator">{ENV.COMPUTE_NODE_1_URL}</adaguc-service>-->
         <adaguc-service name="copernicus-wps">{ENV.COMPUTE_NODE_2_URL}</adaguc-service>
+	<adaguc-service name="lot1">https://bovec.dkrz.de/ows/proxy/emu_secured?</adaguc-service>
 
         <!--
           ### Make sure that the remote instance (adaguc-service-compute) is trusted by adding its certificate to the controllers trust store ###
@@ -75,7 +76,7 @@
       <registerlink>https://services.ceda.ac.uk/cedasite/register/info/</registerlink>
       <logo>/impactportal/images/this_is_NOT_the_BADC_logo.jpg</logo>
       <scope>https://slcs.ceda.ac.uk/oauth/certificate/</scope>     
-      <oauthcallbackurl>https://portal.c3s-magic.eu/oauth</oauthcallbackurl>
+      <oauthcallbackurl>https://{ENV.EXTERNAL_HOSTNAME}/oauth</oauthcallbackurl>
     </provider>      
     <provider name="google">
       <!--

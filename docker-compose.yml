@@ -8,14 +8,15 @@ services:
         volumes:
             - ./backend/config:/config
             - ./backend/adagucdb:/adaguc/adagucdb
-            - ./backend/logs:/var/log/adaguc
+            - /data/adaguc-logs/:/var/log/adaguc
             - ./backend/adaguc-datasets:/data/adaguc-datasets
             - "${STATIC_DATA_LOCATION}:/data/adaguc-data"
             - "${STATIC_DATA_LOCATION}:/data/adaguc-autowms"
-            - ./backend/adaguc-services-controller-home/:/data/adaguc-services-home/
+            - /data/adaguc-services-controller-home/:/data/adaguc-services-home/
             - ./backend/security:/security
         environment:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
+            - "EXTERNAL_HOSTNAME=${EXTERNAL_HOSTNAME}"
             - "COMPUTE_NODE_1_URL=https://compute:9000/wps?"
             - "COMPUTE_NODE_2_URL=https://${EXTERNAL_HOSTNAME}/copernicus-wps/?"
             #  New application can be created at https://console.developers.google.com/apis/credentials
@@ -50,6 +51,7 @@ services:
           - "COMPUTE=https://compute:9000"
           - "VIEWER=https://${EXTERNAL_HOSTNAME}/adaguc-viewer"
           - "STATICWMS=https://${EXTERNAL_HOSTNAME}/backend/wms"
+          - "DATAURL=https://${EXTERNAL_HOSTNAME}/data"
           #This is usually part of the backend, but you can optionally also use the live version
           #if you do not have the datasets available locally.
         #ports:
@@ -73,6 +75,8 @@ services:
 #	debug wps by exposing this port over http
 #        ports:
 #          - "5000:5000"
+        environment:
+          - "WPS_OUTPUT_URL=https://${EXTERNAL_HOSTNAME}/copernicus-wps/outputs/"
         volumes:
             - "${ESMVALTOOL_CMIP5}:/cmip5"
             - "${ESMVALTOOL_OBS}:/obs"
