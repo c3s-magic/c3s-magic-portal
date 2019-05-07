@@ -4,12 +4,12 @@
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/c3s-magic/c3s-magic-frontend.git
-[submodule "copernicus-wps"]
-	path = copernicus-wps
-	url = https://github.com/c3s-magic/copernicus-wps-demo.git
 [submodule "esgfbrowser"]
 	path = esgfbrowser
 	url = https://github.com/c3s-magic/esgfbrowser.git
 [submodule "climexp_numerical_wps"]
 	path = climexp_numerical_wps
 	url = https://github.com/c3s-magic/climexp_numerical_wps
+[submodule "c3s-magic-wps"]
+	path = c3s-magic-wps
+	url = git@github.com:c3s-magic/c3s-magic-wps
