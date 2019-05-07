@@ -18,7 +18,7 @@ services:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
             - "EXTERNAL_HOSTNAME=${EXTERNAL_HOSTNAME}"
             - "COMPUTE_NODE_1_URL=https://compute:9000/wps?"
-            - "COMPUTE_NODE_2_URL=https://${EXTERNAL_HOSTNAME}/copernicus-wps/?"
+            - "COMPUTE_NODE_2_URL=https://${EXTERNAL_HOSTNAME}/wps/?"
             #  New application can be created at https://console.developers.google.com/apis/credentials
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"
@@ -76,13 +76,13 @@ services:
         environment:
           - "ADAGUCSERVICES_AUTOWMS=https://${EXTERNAL_HOSTNAME}/backend/autowms?"
         restart: unless-stopped
-    copernicus-wps:
-        build: copernicus-wps
+    wps:
+        build: c3s-magic-wps
 #	debug wps by exposing this port over http
 #        ports:
 #          - "5000:5000"
         environment:
-          - "WPS_OUTPUT_URL=https://${EXTERNAL_HOSTNAME}/copernicus-wps/outputs/"
+          - "WPS_OUTPUT_URL=https://${EXTERNAL_HOSTNAME}/wps/outputs/"
         volumes:
             - "${ESMVALTOOL_CMIP5}:/cmip5"
             - "${ESMVALTOOL_OBS}:/obs"
@@ -97,7 +97,7 @@ services:
           - "xml2jsonservice=https://${EXTERNAL_HOSTNAME}/backend/xml2json?"
           - "adagucviewer=https://${EXTERNAL_HOSTNAME}/adaguc-viewer"
         ports:
-          - "10080:80"   
+          - "10080:80"
         restart: unless-stopped
     nginx:
         build: nginx
