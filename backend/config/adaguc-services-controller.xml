@@ -22,6 +22,7 @@
 
 
   <security>
+    <enablessl>false</enablessl>
     <userheader>x-ssl_client_s_dn</userheader>
     <truststorepassword>changeit</truststorepassword>
     <truststore>/security/truststore.ts</truststore>
@@ -33,10 +34,9 @@
       <cacertificate>/security/adaguc-services-ca.cert</cacertificate>
       <caprivatekey>/security/adaguc-services-ca.key</caprivatekey>
       <remote-instances>
-        <!--<adaguc-service name="calculator">{ENV.COMPUTE_NODE_1_URL}</adaguc-service>-->
         <adaguc-service name="climexp_numerical_wps">http://climexp_numerical_wps:5000/wps?</adaguc-service>
         <adaguc-service name="copernicus-wps">{ENV.COMPUTE_NODE_2_URL}</adaguc-service>
-	<adaguc-service name="lot1">https://bovec.dkrz.de/ows/proxy/emu_secured?</adaguc-service>
+        <!--<adaguc-service name="lot1">https://bovec.dkrz.de/ows/proxy/emu_secured?</adaguc-service>-->
 
         <!--
           ### Make sure that the remote instance (adaguc-service-compute) is trusted by adding its certificate to the controllers trust store ###
