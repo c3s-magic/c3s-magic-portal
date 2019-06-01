@@ -59,11 +59,12 @@ services:
         restart: unless-stopped
     wps:
         build: c3s-magic-wps
-#	debug wps by exposing this port over http
-#        ports:
-#          - "5000:5000"
+        #debug wps by exposing this port over http
+        #ports:
+        #  - "5000:5000"
         environment:
           - "WPS_OUTPUT_URL=https://${EXTERNAL_HOSTNAME}/wps/outputs/"
+          - "CMIP_DATA_ROOT=/cmip5"
         volumes:
             - "${ESMVALTOOL_CMIP5}:/cmip5"
             - "${ESMVALTOOL_OBS}:/obs"
