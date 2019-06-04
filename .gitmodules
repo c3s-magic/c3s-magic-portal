@@ -9,4 +9,4 @@
 	url = https://github.com/c3s-magic/esgfbrowser.git
 [submodule "c3s-magic-wps"]
 	path = c3s-magic-wps
-	url = git@github.com:c3s-magic/c3s-magic-wps
+	url = https://github.com/c3s-magic/c3s-magic-wps.git
