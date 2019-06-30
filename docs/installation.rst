@@ -10,6 +10,8 @@ The MAGIC portal is normally deployed using Docker. See `The Docker Documentatio
 
 In addition to docker, we also make use of `Docker Compose <https://docs.docker.com/compose/>`_.
 
+This Guide assumes a working installation of docker and docker-compose, and knowledge of this software.
+
 Obtaining the portal code
 -------------------------
 
@@ -25,28 +27,26 @@ The MAGIC portal code is available on GitHub. The main portal repo uses submodul
 Creating a docker-compose .env file
 -----------------------------------
 
-The env file comes with an example (env.example). Copy this file .env and fill in the required fields
+All settings are done via a docker environment file. The env file comes with an example (env.example). Copy this file .env and fill in the required fields. The software is currently setup for CEDA account usage only.
 
 .. literalinclude:: ../env.example
    :language: sh
 
-
-How to add a Metric
+Deploying using docker-compose
 -------------------
 
-1. Add recipe to ESMValTool
-2. Fille in yaml settings file
-3. Find out interactive plots options...
-4. Profit!
+Once the settings file is correctly filled in, the entire portal can be deployed with docker-compose like normal.
+
+.. code-block:: sh
+    $ docker-compose build --pull
+    $ docker-compose up
+    $ docker-compose down
 
 
-## Deploying using docker-compose
+Updating the ADAGUC Datasets
+----------------------------
 
- Add 127.0.1.1       portal.c3s-magic.eu to /etc/hosts    (portal.c3s-magic.eu is configured in console.developers.google.com for OAuth2 callback)
- Do docker-compose build --pull
- Do docker-compose up in working directory and go to localhost:80
- Do docker-compose down to stop all
+If the datasets served by ADAGUC are updated, update the database of these in the following manner:
 
-#!/bin/bash
-
-docker exec c3s-magic-portal_backend_1 /adaguc/adaguc-server-updatedatasets.sh
+.. code-block:: sh
+    $ docker exec c3s-magic-portal_backend_1 /adaguc/adaguc-server-updatedatasets.sh
