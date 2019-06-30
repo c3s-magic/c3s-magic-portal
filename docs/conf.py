@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'C3S Magic'
-copyright = '2019, Niels Drost'
-author = 'Niels Drost'
+copyright = '2019, The Netherlands eScience Center'
+author = 'The C3S Magic Project Partners'
 
 # The short X.Y version
 version = ''
@@ -139,7 +139,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'C3SMagic.tex', 'C3S Magic Documentation',
-     'Niels Drost', 'manual'),
+     'The C3S Magic Project Partners', 'manual'),
 ]
 
 
