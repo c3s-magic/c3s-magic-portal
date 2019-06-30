@@ -24,6 +24,16 @@ The MAGIC portal code is available on GitHub. The main portal repo uses submodul
    $ git submodule init
    $ git submodule update
 
+Obtaining the required data
+---------------------------
+
+Dataset needed can be downloaded on zenodo
+
+Choosing a WPS location
+-----------------------
+
+Choose either the build-in wps (and supply the needed CP4CDS CMIP and OBS data), or point to the CP4CDS WPS (prefered).
+
 Creating a docker-compose .env file
 -----------------------------------
 
