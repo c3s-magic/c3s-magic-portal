@@ -43,7 +43,7 @@ All settings are done via a docker environment file. The env file comes with an 
    :language: sh
 
 Deploying using docker-compose
--------------------
+------------------------------
 
 Once the settings file is correctly filled in, the entire portal can be deployed with docker-compose like normal.
 

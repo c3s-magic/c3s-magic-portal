@@ -12,4 +12,3 @@ The Magic portal contains metrics, all calculated using ESMValTool recipes.
     -- ESMValTool Documentation https://esmvaltool.readthedocs.io
 
 For information on specific recipes used in this portal see the ESMValTool page: https://esmvaltool.readthedocs.io/en/latest/recipes/index.html
-
