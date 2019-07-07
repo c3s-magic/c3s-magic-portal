@@ -8,40 +8,29 @@ services:
         volumes:
             - ./backend/config:/config
             - ./backend/adagucdb:/adaguc/adagucdb
-            - ./backend/logs:/var/log/adaguc
+            - /data/adaguc-logs/:/var/log/adaguc
             - ./backend/adaguc-datasets:/data/adaguc-datasets
             - "${STATIC_DATA_LOCATION}:/data/adaguc-data"
             - "${STATIC_DATA_LOCATION}:/data/adaguc-autowms"
-            - ./backend/adaguc-services-controller-home/:/data/adaguc-services-home/
+            - /data/adaguc-services-controller-home/:/data/adaguc-services-home/
             - ./backend/security:/security
         environment:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
-            - "COMPUTE_NODE_1_URL=https://compute:9000/wps?"
-            - "COMPUTE_NODE_2_URL=https://${EXTERNAL_HOSTNAME}/copernicus-wps/?"
+            - "EXTERNAL_HOSTNAME=${EXTERNAL_HOSTNAME}"
+            - "COMPUTE_NODE_2_URL=https://${EXTERNAL_HOSTNAME}/wps?"
             #  New application can be created at https://console.developers.google.com/apis/credentials
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"
             - "CEDA_OAUTHCLIENTSECRET=${CEDA_OAUTHCLIENTSECRET}"
             - "CEDA_OAUTHCLIENTID=${CEDA_OAUTHCLIENTID}"
-        depends_on:
-            - compute
         restart: unless-stopped
         links:
             - "nginx:${EXTERNAL_HOSTNAME}"
-    compute:
-        build: compute
-        #ports:
-        #    - "9000:9000"
+    climexp_numerical_wps:
+        image: c3smagic/climexp_numerical_wps
+        hostname: climexp_numerical_wps
         volumes:
-            - ./compute/processes:/src/pywps/pywps/processes/
-            - ./compute/config:/config
-            - /data/adaguc-services-compute-home/:/data/adaguc-services-home/
-            - /data/climexp:/data/climexp
-            - /data/esmvaltool:/data/esmvaltool
-            - /data/esmvaltool_output:/data/esmvaltool_output
-            - ./compute/security:/security
-        environment:
-            - "EXTERNALADDRESS=https://compute:9000/"
+            - /data/climexp:/data
         restart: unless-stopped
     frontend:
         build: frontend
@@ -50,6 +39,7 @@ services:
           - "COMPUTE=https://compute:9000"
           - "VIEWER=https://${EXTERNAL_HOSTNAME}/adaguc-viewer"
           - "STATICWMS=https://${EXTERNAL_HOSTNAME}/backend/wms"
+          - "DATAURL=https://${EXTERNAL_HOSTNAME}/data"
           #This is usually part of the backend, but you can optionally also use the live version
           #if you do not have the datasets available locally.
         #ports:
@@ -59,7 +49,6 @@ services:
         depends_on:
           - adaguc-viewer
           - backend
-          - compute
         restart: unless-stopped
     adaguc-viewer:
         image: openearth/adaguc-viewer
@@ -68,11 +57,14 @@ services:
         environment:
           - "ADAGUCSERVICES_AUTOWMS=https://${EXTERNAL_HOSTNAME}/backend/autowms?"
         restart: unless-stopped
-    copernicus-wps:
-        build: copernicus-wps
-#	debug wps by exposing this port over http
-#        ports:
-#          - "5000:5000"
+    wps:
+        build: c3s-magic-wps
+        #debug wps by exposing this port over http
+        #ports:
+        #  - "5000:5000"
+        environment:
+          - "WPS_OUTPUT_URL=https://${EXTERNAL_HOSTNAME}/wps/outputs/"
+          - "CMIP_DATA_ROOT=/cmip5"
         volumes:
             - "${ESMVALTOOL_CMIP5}:/cmip5"
             - "${ESMVALTOOL_OBS}:/obs"
@@ -87,7 +79,7 @@ services:
           - "xml2jsonservice=https://${EXTERNAL_HOSTNAME}/backend/xml2json?"
           - "adagucviewer=https://${EXTERNAL_HOSTNAME}/adaguc-viewer"
         ports:
-          - "10080:80"   
+          - "10080:80"
         restart: unless-stopped
     nginx:
         build: nginx

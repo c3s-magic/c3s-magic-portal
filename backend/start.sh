@@ -180,4 +180,4 @@ fi
 sh /adaguc/adaguc-server-updatedatasets.sh
 
 echo "Starting TOMCAT Server" && \
-java -Dserver.ssl.enabled=false -jar /adaguc/adaguc-services.war
+java -Dserver.ssl.enabled=false -jar /adaguc/adaguc-services.jar
