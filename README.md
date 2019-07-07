@@ -4,4 +4,4 @@
 
 The Metrics and Access to Global Indices for Climate Projections (MAGIC) portal provides a quick and easy assessment of climate projections using well-established performance metrics. It allows the user to configure these criteria, apply them on selected CMIP5 model output and visualize results in the browser or download them onto your local machine.
 
-Documentation for the portal is available on readthedocs: c3s-magic.readthedocs.io
+Documentation for the portal is available [on readthedocs](https://c3s-magic.readthedocs.io)
