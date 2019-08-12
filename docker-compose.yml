@@ -17,7 +17,8 @@ services:
         environment:
             - "EXTERNALADDRESS=https://${EXTERNAL_HOSTNAME}/backend"
             - "EXTERNAL_HOSTNAME=${EXTERNAL_HOSTNAME}"
-            - "COMPUTE_NODE_2_URL=https://${EXTERNAL_HOSTNAME}/wps?"
+            - "COPERNICUS_WPS_URL=${COPERNICUS_WPS_URL}"
+            - "CLIMEXP_WPS_URL=${CLIMEXP_WPS_URL}"
             #  New application can be created at https://console.developers.google.com/apis/credentials
             - "OAUTHCLIENTSECRET=${OAUTHCLIENTSECRET}"
             - "OAUTHCLIENTID=${OAUTHCLIENTID}"
@@ -93,5 +94,5 @@ services:
           - ./cert:/cert
           - ./ca-cert:/ca-cert
           - ./backend/security:/backend-security/
-          - ${PUBLIC_DATA}:/publicdata
+          - ${STATIC_DATA_LOCATION}/c3smagic:/publicdata
         restart: unless-stopped

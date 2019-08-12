@@ -34,8 +34,8 @@
       <cacertificate>/security/adaguc-services-ca.cert</cacertificate>
       <caprivatekey>/security/adaguc-services-ca.key</caprivatekey>
       <remote-instances>
-        <adaguc-service name="climexp_numerical_wps">http://climexp_numerical_wps:5000/wps?</adaguc-service>
-        <adaguc-service name="copernicus-wps">{ENV.COMPUTE_NODE_2_URL}</adaguc-service>
+        <adaguc-service name="climexp_numerical_wps">{ENV.CLIMEXP_WPS_URL}</adaguc-service>
+        <adaguc-service name="copernicus-wps">{ENV.COPERNICUS_WPS_URL}</adaguc-service>
         <!--<adaguc-service name="lot1">https://bovec.dkrz.de/ows/proxy/emu_secured?</adaguc-service>-->
 
         <!--
