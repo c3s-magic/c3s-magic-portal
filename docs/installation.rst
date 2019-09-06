@@ -27,7 +27,7 @@ The MAGIC portal code is available on GitHub. The main portal repo uses submodul
 Obtaining the required data
 ---------------------------
 
-The dataset needed can be downloaded on zenodo.
+The dataset needed can be downloaded on zenodo: `Zenodo Dataset <https://doi.org/10.5281/zenodo.3367497>`_.
 
 Choosing a WPS location
 -----------------------
