@@ -1,4 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/c3s-magic/badge/?version=latest)](https://c3s-magic.readthedocs.io/en/install-documentation/?badge=latest)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3544312.svg)](https://doi.org/10.5281/zenodo.3544312)
 
 # C3S MAGIC Portal
 
